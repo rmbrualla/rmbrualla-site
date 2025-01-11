@@ -7,13 +7,51 @@ interface PaperCardProps {
   title: string;
   authors: string[];
   conference: string;
-  image?: string;
+  volume?: string;
+  number?: string;
+  pages?: string;
+  year?: string;
+  publisher?: string;
+  label?: string;
+  visual?: string;
+  project_page?: string;
   video?: string;
+  code?: string;
+  arxiv?: string;
+  paper?: string;
+  notes?: string;
+  extra?: string;
 }
 
-export function PaperCard({ title, authors, conference, image, video }: PaperCardProps) {
+export function PaperCard({
+  title,
+  authors,
+  conference,
+  volume,
+  number,
+  pages,
+  year,
+  publisher,
+  label,
+  visual,
+  project_page,
+  video,
+  code,
+  arxiv,
+  paper,
+  notes,
+  extra,
+}: PaperCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
+  const image = 'images/' + label + '_before.jpg'
+  var video_hover = null
+  var image_hover = null
+  if (visual == "overlay_video") {
+    video_hover = 'images/' + label + '_after.mp4'
+  } else if (visual == "overlay_image") {
+    image_hover = 'images/' + label + '_after.jpg'
+  }
   const renderAuthor = (author: string, index: number) => {
     const website = getAuthorWebsite(author);
     if (website) {
@@ -52,25 +90,34 @@ export function PaperCard({ title, authors, conference, image, video }: PaperCar
         <p className="mt-2 text-sm text-muted-foreground">{renderAuthors()}</p>
         <p className="mt-1 text-sm font-medium text-primary">{conference}</p>
       </CardHeader>
-      {(image || video) && (
-        <CardContent className="p-4 pt-0">
-          <AspectRatio ratio={16 / 9} className="relative">
+      {(image || video_hover) && (
+        <CardContent className="p-4 pt-0 w-48 h-48">
+          <AspectRatio ratio={1 / 1} className="relative">
             {image && (
               <img
                 src={image}
                 alt={`Reference image for ${title}`}
                 className={`h-full w-full rounded-md object-cover transition-opacity duration-300 ${
-                  isHovered && video ? 'opacity-0' : 'opacity-100'
+                  isHovered && (video_hover || image_hover) ? 'opacity-0' : 'opacity-100'
                 }`}
               />
             )}
-            {video && (
+            {video_hover && (
               <video
-                src={video}
-                controls={isHovered}
-                autoPlay={isHovered}
+                src={video_hover}
+                autoPlay={true}
+                onPause={!isHovered}
                 muted
                 loop
+                className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            )}
+            {image_hover && (
+              <img
+                src={image_hover}
+                alt={`Reference image for ${title}`}
                 className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
                   isHovered ? 'opacity-100' : 'opacity-0'
                 }`}

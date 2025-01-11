@@ -10,10 +10,10 @@ const Index = () => {
       <main className="container py-12 px-4 sm:px-6 lg:px-8">
         {/* Personal Description Section */}
         <section className="mb-16">
-          <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6 mb-6">
+          <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
             <h1 className="text-4xl font-bold text-primary">Ricardo Martin-Brualla</h1>
             <Avatar className="w-32 h-32 border-2 border-muted">
-              <AvatarImage src="/images/RicardoMartinBrualla.jpg" alt="Profile photo" />
+              <AvatarImage src="images/RicardoMartinBrualla.jpg" alt="Profile photo" />
               <AvatarFallback>RMB</AvatarFallback>
             </Avatar>
           </div>

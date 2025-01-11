@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+	build: {
+		cssMinify: false, // Deactivate esbuild and use cssnano for CSS only
+		minify: false,
+		// Other build options go here
+	},
   plugins: [
     react(),
     mode === 'development' &&
