@@ -12,7 +12,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      </BrowserRouter basename="rmbrualla-site">
+      <BrowserRouter basename="rmbrualla-site">
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
