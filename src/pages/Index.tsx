@@ -33,10 +33,7 @@ const Index = () => {
           </div>
           <div className="prose prose-md">
             <p className="text-lg text-secondary mb-4">
-                <a className="text-blue-400 mb-2" href="mailto:rmbrualla@gmail.com">Email</a> / 
-                <a className="text-blue-400 mb-2" href="https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ">Google Scholar</a> /
-                <a className="text-blue-400 mb-2" href="https://twitter.com/rmbrualla">Twitter</a> /
-                <a className="text-blue-400 mb-2" href="https://github.com/rmbrualla/">Github</a>
+                <a className="text-blue-400 mb-2" href="mailto:rmbrualla@gmail.com">Email</a> / <a className="text-blue-400 mb-2" href="https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ">Google Scholar</a> / <a className="text-blue-400 mb-2" href="https://twitter.com/rmbrualla">Twitter</a> / <a className="text-blue-400 mb-2" href="https://github.com/rmbrualla/">Github</a>
               </p>
           </div>
         </section>
