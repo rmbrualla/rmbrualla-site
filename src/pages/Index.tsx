@@ -13,8 +13,8 @@ const Index = () => {
           <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <h1 className="text-4xl font-bold text-primary">Ricardo Martin-Brualla</h1>
             <Avatar className="w-32 h-32 border-2 border-muted">
-              <AvatarImage src="/placeholder.svg" alt="Profile photo" />
-              <AvatarFallback>JD</AvatarFallback>
+              <AvatarImage src="/images/RicardoMartinBrualla.jpg" alt="Profile photo" />
+              <AvatarFallback>RMB</AvatarFallback>
             </Avatar>
           </div>
           <div className="prose prose-lg max-w-none">
