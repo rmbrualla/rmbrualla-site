@@ -1,5 +1,6 @@
 import { PaperCard } from "@/components/PaperCard";
 import { loadPapers } from "@/lib/papers";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
   const papers = loadPapers();
@@ -9,7 +10,13 @@ const Index = () => {
       <main className="container py-12 px-4 sm:px-6 lg:px-8">
         {/* Personal Description Section */}
         <section className="mb-16">
-          <h1 className="text-4xl font-bold text-primary mb-6">John Doe</h1>
+          <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6 mb-6">
+            <h1 className="text-4xl font-bold text-primary">John Doe</h1>
+            <Avatar className="w-32 h-32 border-2 border-muted">
+              <AvatarImage src="/placeholder.svg" alt="Profile photo" />
+              <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
+          </div>
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-secondary mb-4">
               I am a researcher in the field of artificial intelligence, focusing on machine learning
