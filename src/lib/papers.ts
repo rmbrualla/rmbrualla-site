@@ -15,12 +15,14 @@ export const loadPapers = (): Paper[] => {
       authors: ["John Doe", "Jane Smith"],
       conference: "ICML 2023",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      video: "https://example.com/sample-video.mp4", // Added video URL
     },
     {
       title: "Example Paper 2",
       authors: ["John Doe", "Bob Johnson"],
       conference: "NeurIPS 2023",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      video: "https://example.com/another-video.mp4", // Added video URL
     },
   ];
 };
