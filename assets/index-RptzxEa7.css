@@ -743,6 +743,10 @@ h1, h2, h3, h4, h5, h6{
   z-index: 1;
 }
 
+.float-right{
+  float: right;
+}
+
 .-mx-1{
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -807,6 +811,10 @@ h1, h2, h3, h4, h5, h6{
 
 .ml-1{
   margin-left: 0.25rem;
+}
+
+.ml-4{
+  margin-left: 1rem;
 }
 
 .ml-auto{
@@ -1349,6 +1357,10 @@ h1, h2, h3, h4, h5, h6{
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.self-end{
+  align-self: flex-end;
 }
 
 .overflow-auto{
@@ -3010,6 +3022,13 @@ h1, h2, h3, h4, h5, h6{
   border-color: hsl(var(--destructive));
 }
 
+@media not all and (min-width: 640px){
+
+  .max-sm\:block{
+    display: block;
+  }
+}
+
 @media (min-width: 640px){
 
   .sm\:bottom-0{
@@ -3030,6 +3049,10 @@ h1, h2, h3, h4, h5, h6{
 
   .sm\:flex{
     display: flex;
+  }
+
+  .sm\:flow-root{
+    display: flow-root;
   }
 
   .sm\:max-w-sm{
@@ -3076,6 +3099,10 @@ h1, h2, h3, h4, h5, h6{
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .sm\:self-auto{
+    align-self: auto;
   }
 
   .sm\:rounded-lg{

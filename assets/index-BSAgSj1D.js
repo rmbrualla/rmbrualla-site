@@ -17655,14 +17655,18 @@ const Index = () => {
   const papers = loadPapers();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "container max-w-3xl mx-auto py-12 px-4 sm:px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "mb-16", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6 mb-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl font-bold text-primary", children: "Ricardo Martin-Brualla" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "w-32 h-32 border-2 border-muted", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "w-32 h-32 border-2 border-muted self-end sm:self-auto", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "prose prose-lg max-w-none", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-lg max-w-none", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sm:flow-root", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 border-2 border-muted", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-secondary mb-4", children: "I am a researcher interested in the intersection of AI and 3D, and excited about creating new products in this area." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-lg text-secondary mb-4", children: [
           "Previously, I worked at Google for eight years, most recently as a Senior Staff Research Scientist, leading and managing a team working on ",
@@ -17691,7 +17695,7 @@ const Index = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "https://issuu.com/dougc/docs/mtrvol118no3_summer24_web/22?experiment=previewReaderTestMode%2Cnew-bff-translate%2Cnew-bff-fullscreen%2Cnew-bff-video%2Cnew-bff-purchased", children: "Mountaineers magazine" }),
           "."
         ] })
-      ] }),
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-md", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-lg text-secondary mb-4", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400 mb-2", href: "mailto:rmbrualla@gmail.com", children: "Email" }),
         " / ",
