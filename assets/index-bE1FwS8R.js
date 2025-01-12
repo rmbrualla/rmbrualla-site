@@ -17624,7 +17624,7 @@ const AvatarFallback = reactExports.forwardRef(({ className, ...props }, ref) =>
 AvatarFallback.displayName = Fallback.displayName;
 const Index = () => {
   const papers = loadPapers();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "container py-12 px-4 sm:px-6 lg:px-8", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "container max-w-3xl mx-auto py-12 px-4 sm:px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "mb-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6 mb-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl font-bold text-primary", children: "Ricardo Martin-Brualla" }),
@@ -17675,7 +17675,7 @@ const Index = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl font-bold text-primary mb-8", children: "Publications" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3", children: papers.map((paper, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(PaperCard, { ...paper }, index2)) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: papers.map((paper, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(PaperCard, { ...paper }, index2)) })
     ] })
   ] }) });
 };
