@@ -1,6 +1,8 @@
 import { PaperCard } from "@/components/PaperCard";
 import { loadPapers } from "@/lib/papers";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Mail, GraduationCap, Twitter, Github } from "lucide-react";
 
 const Index = () => {
   const papers = loadPapers();
@@ -38,9 +40,32 @@ const Index = () => {
             </div>
           </div>
           <div className="prose prose-md">
-            <p className="text-lg text-secondary mb-4">
-                <a className="text-blue-400 mb-2" href="mailto:rmbrualla@gmail.com">Email</a> / <a className="text-blue-400 mb-2" href="https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ">Google Scholar</a> / <a className="text-blue-400 mb-2" href="https://twitter.com/rmbrualla">Twitter</a> / <a className="text-blue-400 mb-2" href="https://github.com/rmbrualla/">Github</a>
-            </p>
+            <div className="flex flex-wrap gap-2">
+              <a href="mailto:rmbrualla@gmail.com">
+                <Badge variant="outline" className="hover:bg-accent">
+                  <Mail className="mr-1 h-3 w-3" />
+                  Email
+                </Badge>
+              </a>
+              <a href="https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ">
+                <Badge variant="outline" className="hover:bg-accent">
+                  <GraduationCap className="mr-1 h-3 w-3" />
+                  Google Scholar
+                </Badge>
+              </a>
+              <a href="https://twitter.com/rmbrualla">
+                <Badge variant="outline" className="hover:bg-accent">
+                  <Twitter className="mr-1 h-3 w-3" />
+                  Twitter
+                </Badge>
+              </a>
+              <a href="https://github.com/rmbrualla/">
+                <Badge variant="outline" className="hover:bg-accent">
+                  <Github className="mr-1 h-3 w-3" />
+                  Github
+                </Badge>
+              </a>
+            </div>
           </div>
         </section>
 
