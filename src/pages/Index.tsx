@@ -12,7 +12,7 @@ const Index = () => {
         <section className="mb-16">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
             <h1 className="text-4xl font-bold text-primary">Ricardo Martin-Brualla</h1>
-            <Avatar className="w-32 h-32 border-2 border-muted self-end sm:self-auto">
+            <Avatar className="w-32 h-32 border-2 border-muted self-end sm:self-auto max-sm:hidden">
               <AvatarImage src="images/RicardoMartinBrualla.jpg" alt="Profile photo" />
               <AvatarFallback>RMB</AvatarFallback>
             </Avatar>
