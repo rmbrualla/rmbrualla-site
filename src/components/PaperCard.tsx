@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { getAuthorWebsite } from "@/lib/authors";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface PaperCardProps {
   title: string;
@@ -43,6 +43,38 @@ export function PaperCard({
   extra,
 }: PaperCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if the card's center is in the middle of the viewport
+        if (entry.isIntersecting) {
+          const cardRect = entry.boundingClientRect;
+          const windowHeight = window.innerHeight;
+          const cardCenter = cardRect.top + cardRect.height / 2;
+          const windowCenter = windowHeight / 2;
+          const isNearCenter = Math.abs(cardCenter - windowCenter) < windowHeight / 4;
+          setIsInView(isNearCenter);
+        } else {
+          setIsInView(false);
+        }
+      },
+      {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: "-25% 0px -25% 0px"
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const image = 'images/' + label + '_before.jpg'
   var video_hover = null
@@ -82,6 +114,7 @@ export function PaperCard({
 
   return (
     <Card 
+      ref={cardRef}
       className="overflow-hidden transition-all duration-300 hover:shadow-lg flex"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -94,7 +127,7 @@ export function PaperCard({
                 src={image}
                 alt={`Reference image for ${title}`}
                 className={`h-full w-full object-cover transition-opacity duration-300 ${
-                  isHovered && (video_hover || image_hover) ? 'opacity-0' : 'opacity-100'
+                  (isHovered || isInView) && (video_hover || image_hover) ? 'opacity-0' : 'opacity-100'
                 }`}
               />
             )}
@@ -105,7 +138,7 @@ export function PaperCard({
                 muted
                 loop
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-                  isHovered ? 'opacity-100' : 'opacity-0'
+                  isHovered || isInView ? 'opacity-100' : 'opacity-0'
                 }`}
               />
             )}
@@ -114,7 +147,7 @@ export function PaperCard({
                 src={image_hover}
                 alt={`Reference image for ${title}`}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-                  isHovered ? 'opacity-100' : 'opacity-0'
+                  isHovered || isInView ? 'opacity-100' : 'opacity-0'
                 }`}
               />
             )}
