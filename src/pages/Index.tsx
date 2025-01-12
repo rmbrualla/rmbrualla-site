@@ -7,7 +7,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="container py-12 px-4 sm:px-6 lg:px-8">
+      <main className="container max-w-3xl mx-auto py-12 px-4 sm:px-6">
         {/* Personal Description Section */}
         <section className="mb-16">
           <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
@@ -41,7 +41,7 @@ const Index = () => {
         {/* Papers Section */}
         <section>
           <h2 className="text-2xl font-bold text-primary mb-8">Publications</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-6">
             {papers.map((paper, index) => (
               <PaperCard key={index} {...paper} />
             ))}
