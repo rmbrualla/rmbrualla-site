@@ -793,10 +793,6 @@ h1, h2, h3, h4, h5, h6{
   margin-bottom: 4rem;
 }
 
-.mb-2{
-  margin-bottom: 0.5rem;
-}
-
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -819,6 +815,10 @@ h1, h2, h3, h4, h5, h6{
 
 .ml-auto{
   margin-left: auto;
+}
+
+.mr-1{
+  margin-right: 0.25rem;
 }
 
 .mr-2{
