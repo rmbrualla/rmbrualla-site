@@ -17010,22 +17010,17 @@ function PaperCard({
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     Card,
     {
-      className: "overflow-hidden transition-all duration-300 hover:shadow-lg",
+      className: "overflow-hidden transition-all duration-300 hover:shadow-lg flex",
       onMouseEnter: () => setIsHovered(true),
       onMouseLeave: () => setIsHovered(false),
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "p-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-serif font-semibold leading-tight", children: title }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: renderAuthors() }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm font-medium text-primary", children: conference })
-        ] }),
-        (image || video_hover) && /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "p-4 pt-0 w-48 h-48", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AspectRatio, { ratio: 1 / 1, className: "relative", children: [
+        (image || video_hover) && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-48 h-48 flex-shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AspectRatio, { ratio: 1 / 1, className: "relative", children: [
           image && /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
             {
               src: image,
               alt: `Reference image for ${title}`,
-              className: `h-full w-full rounded-md object-cover transition-opacity duration-300 ${isHovered && (video_hover || image_hover) ? "opacity-0" : "opacity-100"}`
+              className: `h-full w-full object-cover transition-opacity duration-300 ${isHovered && (video_hover || image_hover) ? "opacity-0" : "opacity-100"}`
             }
           ),
           video_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17033,10 +17028,9 @@ function PaperCard({
             {
               src: video_hover,
               autoPlay: true,
-              onPause: !isHovered,
               muted: true,
               loop: true,
-              className: `absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
+              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
             }
           ),
           image_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17044,9 +17038,14 @@ function PaperCard({
             {
               src: image_hover,
               alt: `Reference image for ${title}`,
-              className: `absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
+              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
             }
           )
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "p-4 text-left", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-serif font-semibold leading-tight", children: title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: renderAuthors() }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm font-medium text-primary", children: conference })
         ] }) })
       ]
     }
