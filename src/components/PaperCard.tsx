@@ -52,6 +52,7 @@ export function PaperCard({
   } else if (visual == "overlay_image") {
     image_hover = 'images/' + label + '_after.jpg'
   }
+
   const renderAuthor = (author: string, index: number) => {
     const website = getAuthorWebsite(author);
     if (website) {
@@ -81,23 +82,18 @@ export function PaperCard({
 
   return (
     <Card 
-      className="overflow-hidden transition-all duration-300 hover:shadow-lg"
+      className="overflow-hidden transition-all duration-300 hover:shadow-lg flex"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <CardHeader className="p-4">
-        <h3 className="text-lg font-serif font-semibold leading-tight">{title}</h3>
-        <p className="mt-2 text-sm text-muted-foreground">{renderAuthors()}</p>
-        <p className="mt-1 text-sm font-medium text-primary">{conference}</p>
-      </CardHeader>
       {(image || video_hover) && (
-        <CardContent className="p-4 pt-0 w-48 h-48">
+        <div className="w-48 h-48 flex-shrink-0">
           <AspectRatio ratio={1 / 1} className="relative">
             {image && (
               <img
                 src={image}
                 alt={`Reference image for ${title}`}
-                className={`h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                className={`h-full w-full object-cover transition-opacity duration-300 ${
                   isHovered && (video_hover || image_hover) ? 'opacity-0' : 'opacity-100'
                 }`}
               />
@@ -106,10 +102,9 @@ export function PaperCard({
               <video
                 src={video_hover}
                 autoPlay={true}
-                onPause={!isHovered}
                 muted
                 loop
-                className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                   isHovered ? 'opacity-100' : 'opacity-0'
                 }`}
               />
@@ -118,14 +113,21 @@ export function PaperCard({
               <img
                 src={image_hover}
                 alt={`Reference image for ${title}`}
-                className={`absolute inset-0 h-full w-full rounded-md object-cover transition-opacity duration-300 ${
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                   isHovered ? 'opacity-100' : 'opacity-0'
                 }`}
               />
             )}
           </AspectRatio>
-        </CardContent>
+        </div>
       )}
+      <div className="flex-1">
+        <CardHeader className="p-4 text-left">
+          <h3 className="text-lg font-serif font-semibold leading-tight">{title}</h3>
+          <p className="mt-2 text-sm text-muted-foreground">{renderAuthors()}</p>
+          <p className="mt-1 text-sm font-medium text-primary">{conference}</p>
+        </CardHeader>
+      </div>
     </Card>
   );
 }
