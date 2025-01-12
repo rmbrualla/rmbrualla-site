@@ -16976,6 +16976,34 @@ function PaperCard({
   extra
 }) {
   const [isHovered, setIsHovered] = reactExports.useState(false);
+  const [isInView, setIsInView] = reactExports.useState(false);
+  const cardRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const cardRect = entry.boundingClientRect;
+          const windowHeight = window.innerHeight;
+          const cardCenter = cardRect.top + cardRect.height / 2;
+          const windowCenter = windowHeight / 2;
+          const isNearCenter = Math.abs(cardCenter - windowCenter) < windowHeight / 4;
+          setIsInView(isNearCenter);
+        } else {
+          setIsInView(false);
+        }
+      },
+      {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: "-25% 0px -25% 0px"
+      }
+    );
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   const image = "images/" + label + "_before.jpg";
   var video_hover = null;
   var image_hover = null;
@@ -17010,6 +17038,7 @@ function PaperCard({
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     Card,
     {
+      ref: cardRef,
       className: "overflow-hidden transition-all duration-300 hover:shadow-lg flex",
       onMouseEnter: () => setIsHovered(true),
       onMouseLeave: () => setIsHovered(false),
@@ -17020,7 +17049,7 @@ function PaperCard({
             {
               src: image,
               alt: `Reference image for ${title}`,
-              className: `h-full w-full object-cover transition-opacity duration-300 ${isHovered && (video_hover || image_hover) ? "opacity-0" : "opacity-100"}`
+              className: `h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && (video_hover || image_hover) ? "opacity-0" : "opacity-100"}`
             }
           ),
           video_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17030,7 +17059,7 @@ function PaperCard({
               autoPlay: true,
               muted: true,
               loop: true,
-              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
+              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered || isInView ? "opacity-100" : "opacity-0"}`
             }
           ),
           image_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17038,7 +17067,7 @@ function PaperCard({
             {
               src: image_hover,
               alt: `Reference image for ${title}`,
-              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`
+              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered || isInView ? "opacity-100" : "opacity-0"}`
             }
           )
         ] }) }),
