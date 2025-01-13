@@ -14,17 +14,20 @@ const Index = () => {
         <section className="mb-16">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
             <h1 className="text-3xl sm:text-4xl font-bold text-primary">Ricardo Martin-Brualla</h1>
-            <Avatar className="w-32 h-32 border-2 border-muted self-end sm:self-auto max-sm:hidden">
+            <Avatar className="w-32 h-32 self-end sm:self-auto max-sm:hidden">
               <AvatarImage src="images/RicardoMartinBrualla.jpg" alt="Profile photo" />
               <AvatarFallback>RMB</AvatarFallback>
             </Avatar>
           </div>
-          <div className="prose prose-lg max-w-none">
-            <div className="sm:flow-root">
-              <Avatar className="hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 border-2 border-muted">
-                <AvatarImage src="images/RicardoMartinBrualla.jpg" alt="Profile photo" />
-                <AvatarFallback>RMB</AvatarFallback>
-              </Avatar>
+          <div className="prose prose-lg max-w-none overflow-visible">
+            <div className="sm:flow-root relative overflow-visible">
+              <div className="hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 -mt-8">
+                <img 
+                  src="images/RicardoMartinBrualla.jpg" 
+                  alt="Profile photo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-base sm:text-lg text-secondary mb-4">
                 I am a researcher interested in the intersection of AI and 3D, and excited about creating new products in this area.
               </p>
@@ -39,29 +42,29 @@ const Index = () => {
               </p>
             </div>
           </div>
-          <div className="prose prose-md">
-            <div className="flex flex-wrap gap-2">
+          <div className="prose prose-md flex justify-center w-full mt-6">
+            <div className="flex flex-wrap gap-2 justify-center items-center">
               <a href="mailto:rmbrualla@gmail.com">
-                <Badge variant="outline" className="hover:bg-accent">
-                  <Mail className="mr-1 h-3 w-3" />
+                <Badge variant="outline" className="hover:bg-accent text-sm px-3 py-1">
+                  <Mail className="mr-2 h-4 w-4" />
                   Email
                 </Badge>
               </a>
               <a href="https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ">
-                <Badge variant="outline" className="hover:bg-accent">
-                  <GraduationCap className="mr-1 h-3 w-3" />
+                <Badge variant="outline" className="hover:bg-accent text-sm px-3 py-1">
+                  <GraduationCap className="mr-2 h-4 w-4" />
                   Google Scholar
                 </Badge>
               </a>
               <a href="https://twitter.com/rmbrualla">
-                <Badge variant="outline" className="hover:bg-accent">
-                  <Twitter className="mr-1 h-3 w-3" />
+                <Badge variant="outline" className="hover:bg-accent text-sm px-3 py-1">
+                  <Twitter className="mr-2 h-4 w-4" />
                   Twitter
                 </Badge>
               </a>
               <a href="https://github.com/rmbrualla/">
-                <Badge variant="outline" className="hover:bg-accent">
-                  <Github className="mr-1 h-3 w-3" />
+                <Badge variant="outline" className="hover:bg-accent text-sm px-3 py-1">
+                  <Github className="mr-2 h-4 w-4" />
                   Github
                 </Badge>
               </a>
