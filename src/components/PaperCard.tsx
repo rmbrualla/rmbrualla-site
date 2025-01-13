@@ -44,12 +44,13 @@ export function PaperCard({
 }: PaperCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Check if the card's center is in the middle of the viewport
         if (entry.isIntersecting) {
           const cardRect = entry.boundingClientRect;
           const windowHeight = window.innerHeight;
@@ -84,6 +85,21 @@ export function PaperCard({
   } else if (visual == "overlay_image") {
     image_hover = 'images/' + label + '_after.jpg'
   }
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.addEventListener('loadeddata', handleVideoLoad);
+    }
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener('loadeddata', handleVideoLoad);
+      }
+    };
+  }, []);
 
   const renderAuthor = (author: string, index: number) => {
     const website = getAuthorWebsite(author);
@@ -127,18 +143,19 @@ export function PaperCard({
                 src={image}
                 alt={`Reference image for ${title}`}
                 className={`h-full w-full object-cover transition-opacity duration-300 ${
-                  (isHovered || isInView) && (video_hover || image_hover) ? 'opacity-0' : 'opacity-100'
+                  (isHovered || isInView) && (video_hover || image_hover) && (isVideoLoaded || image_hover) ? 'opacity-0' : 'opacity-100'
                 }`}
               />
             )}
             {video_hover && (
               <video
+                ref={videoRef}
                 src={video_hover}
                 autoPlay={true}
                 muted
                 loop
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-                  isHovered || isInView ? 'opacity-100' : 'opacity-0'
+                  (isHovered || isInView) && isVideoLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
               />
             )}
