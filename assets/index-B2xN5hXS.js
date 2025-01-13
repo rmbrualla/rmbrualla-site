@@ -17035,7 +17035,9 @@ function PaperCard({
 }) {
   const [isHovered, setIsHovered] = reactExports.useState(false);
   const [isInView, setIsInView] = reactExports.useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = reactExports.useState(false);
   const cardRef = reactExports.useRef(null);
+  const videoRef = reactExports.useRef(null);
   reactExports.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -17070,6 +17072,19 @@ function PaperCard({
   } else if (visual == "overlay_image") {
     image_hover = "images/" + label + "_after.jpg";
   }
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+  reactExports.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.addEventListener("loadeddata", handleVideoLoad);
+    }
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("loadeddata", handleVideoLoad);
+      }
+    };
+  }, []);
   const renderAuthor = (author, index2) => {
     const website = getAuthorWebsite(author);
     if (website) {
@@ -17107,17 +17122,18 @@ function PaperCard({
             {
               src: image,
               alt: `Reference image for ${title}`,
-              className: `h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && (video_hover || image_hover) ? "opacity-0" : "opacity-100"}`
+              className: `h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && (video_hover || image_hover) && (isVideoLoaded || image_hover) ? "opacity-0" : "opacity-100"}`
             }
           ),
           video_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
             "video",
             {
+              ref: videoRef,
               src: video_hover,
               autoPlay: true,
               muted: true,
               loop: true,
-              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered || isInView ? "opacity-100" : "opacity-0"}`
+              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && isVideoLoaded ? "opacity-100" : "opacity-0"}`
             }
           ),
           image_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
