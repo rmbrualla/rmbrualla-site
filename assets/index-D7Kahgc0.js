@@ -17749,7 +17749,7 @@ const Index = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "container max-w-3xl mx-auto py-12 px-4 sm:px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "mb-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl font-bold text-primary", children: "Ricardo Martin-Brualla" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-primary", children: "Ricardo Martin-Brualla" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "w-32 h-32 border-2 border-muted self-end sm:self-auto max-sm:hidden", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
@@ -17760,15 +17760,15 @@ const Index = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-secondary mb-4", children: "I am a researcher interested in the intersection of AI and 3D, and excited about creating new products in this area." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-lg text-secondary mb-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base sm:text-lg text-secondary mb-4", children: "I am a researcher interested in the intersection of AI and 3D, and excited about creating new products in this area." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-base sm:text-lg text-secondary mb-4", children: [
           "Previously, I worked at Google for eight years, most recently as a Senior Staff Research Scientist, leading and managing a team working on ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "https://blog.google/products/shopping/search-on-2022-shopping/", children: "generating 3D assets" }),
           " for all products in Google Search , using NeRFs, diffusion and video models. Before that, I worked for five years on 3D telepresence on ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "https://blog.google/technology/research/project-starline/", children: "Project Starline" }),
           ", from building the first end-to-end demos to leading the ML efforts for real-time novel view synthesis."
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-lg text-secondary mb-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-base sm:text-lg text-secondary mb-4", children: [
           "I obtained my PhD in Computer Science and Engineering at the ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "http://www.cs.washington.edu/", children: "University of Washington" }),
           " in 2016 with  ",
@@ -17781,7 +17781,7 @@ const Index = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "https://www.upc.edu/en", children: "Barcelona Tech / UPC" }),
           "."
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-lg text-secondary mb-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-base sm:text-lg text-secondary mb-4", children: [
           "Outside of work, I love the outdoors and adventures. During COVID-19, my wife and I crossed Alaska from Ketchikan to Kotzebue on foot, packraft and cycling. We wrote about it on our blog called ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-400", href: "http://north2arctic.com", children: "north2arctic" }),
           ", and we were featured in the  ",
@@ -17809,7 +17809,7 @@ const Index = () => {
       ] }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl font-bold text-primary mb-8", children: "Publications" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl sm:text-2xl font-bold text-primary mb-8", children: "Publications" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: papers.map((paper, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(PaperCard, { ...paper }, index2)) })
     ] })
   ] }) });
