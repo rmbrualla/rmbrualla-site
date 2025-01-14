@@ -21,11 +21,11 @@ const Index = () => {
           </div>
           <div className="prose prose-lg max-w-none overflow-visible">
             <div className="sm:flow-root relative overflow-visible">
-              <div className="hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 -mt-8">
+              <div className="hidden max-sm:block float-right ml-4 mb-4 w-32 h-32">
                 <img 
                   src="images/RicardoMartinBrualla.jpg" 
                   alt="Profile photo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover mt-0 mb-0"
                 />
               </div>
               <p className="text-base sm:text-lg text-secondary mb-4">
@@ -42,8 +42,8 @@ const Index = () => {
               </p>
             </div>
           </div>
-          <div className="prose prose-md flex justify-center w-full mt-6">
-            <div className="flex flex-wrap gap-2 justify-center items-center">
+          <div className="flex justify-center mt-6">
+            <div className="flex flex-wrap gap-2 justify-center">
               <a href="mailto:rmbrualla@gmail.com">
                 <Badge variant="outline" className="hover:bg-accent text-sm px-3 py-1">
                   <Mail className="mr-2 h-4 w-4" />

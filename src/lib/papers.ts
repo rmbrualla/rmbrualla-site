@@ -28,7 +28,6 @@ export const loadPapers = (): Paper[] => {
   }).data;
 
   return parsedData.map((record: any) => {
-    console.log('record: ', record)
     const paper: Paper = {
       title: record.title,
       authors: record.authors.split(';').filter((author: string) => author.trim() !== '').map((author: string) => {
