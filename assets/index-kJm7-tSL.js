@@ -1,6 +1,9 @@
+var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
 };
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
 var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read from private field"), getter ? getter.call(obj) : member.get(obj));
 var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
@@ -39,8 +42,8 @@ function _mergeNamespaces(n2, m2) {
   if (relList && relList.supports && relList.supports("modulepreload")) {
     return;
   }
-  for (const link of document.querySelectorAll('link[rel="modulepreload"]')) {
-    processPreload(link);
+  for (const link2 of document.querySelectorAll('link[rel="modulepreload"]')) {
+    processPreload(link2);
   }
   new MutationObserver((mutations) => {
     for (const mutation of mutations) {
@@ -53,22 +56,22 @@ function _mergeNamespaces(n2, m2) {
       }
     }
   }).observe(document, { childList: true, subtree: true });
-  function getFetchOpts(link) {
+  function getFetchOpts(link2) {
     const fetchOpts = {};
-    if (link.integrity) fetchOpts.integrity = link.integrity;
-    if (link.referrerPolicy) fetchOpts.referrerPolicy = link.referrerPolicy;
-    if (link.crossOrigin === "use-credentials")
+    if (link2.integrity) fetchOpts.integrity = link2.integrity;
+    if (link2.referrerPolicy) fetchOpts.referrerPolicy = link2.referrerPolicy;
+    if (link2.crossOrigin === "use-credentials")
       fetchOpts.credentials = "include";
-    else if (link.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
+    else if (link2.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
     else fetchOpts.credentials = "same-origin";
     return fetchOpts;
   }
-  function processPreload(link) {
-    if (link.ep)
+  function processPreload(link2) {
+    if (link2.ep)
       return;
-    link.ep = true;
-    const fetchOpts = getFetchOpts(link);
-    fetch(link.href, fetchOpts);
+    link2.ep = true;
+    const fetchOpts = getFetchOpts(link2);
+    fetch(link2.href, fetchOpts);
   }
 })();
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
@@ -146,7 +149,7 @@ function N$1(a, b) {
 function O$1(a) {
   return "object" === typeof a && null !== a && a.$$typeof === l$1;
 }
-function escape(a) {
+function escape$2(a) {
   var b = { "=": "=0", ":": "=2" };
   return "$" + a.replace(/[=:]/g, function(a2) {
     return b[a2];
@@ -154,7 +157,7 @@ function escape(a) {
 }
 var P$2 = /\/+/g;
 function Q$1(a, b) {
-  return "object" === typeof a && null !== a && null != a.key ? escape("" + a.key) : b.toString(36);
+  return "object" === typeof a && null !== a && null != a.key ? escape$2("" + a.key) : b.toString(36);
 }
 function R$1(a, b, e2, d, c) {
   var k2 = typeof a;
@@ -8621,7 +8624,7 @@ const Icon = reactExports.forwardRef(
         ...rest
       },
       [
-        ...iconNode.map(([tag, attrs]) => reactExports.createElement(tag, attrs)),
+        ...iconNode.map(([tag2, attrs]) => reactExports.createElement(tag2, attrs)),
         ...Array.isArray(children) ? children : [children]
       ]
     );
@@ -8651,6 +8654,42 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const ExternalLink = createLucideIcon("ExternalLink", [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+]);
+/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const FileCode = createLucideIcon("FileCode", [
+  ["path", { d: "M10 12.5 8 15l2 2.5", key: "1tg20x" }],
+  ["path", { d: "m14 12.5 2 2.5-2 2.5", key: "yinavb" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z", key: "1mlx9k" }]
+]);
+/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const FileText = createLucideIcon("FileText", [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+]);
+/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const Github = createLucideIcon("Github", [
   [
     "path",
@@ -8660,6 +8699,17 @@ const Github = createLucideIcon("Github", [
     }
   ],
   ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
+]);
+/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Globe = createLucideIcon("Globe", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ]);
 /**
  * @license lucide-react v0.462.0 - ISC
@@ -8687,6 +8737,15 @@ const GraduationCap = createLucideIcon("GraduationCap", [
 const Mail = createLucideIcon("Mail", [
   ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }]
+]);
+/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Play = createLucideIcon("Play", [
+  ["polygon", { points: "6 3 20 12 6 21 6 3", key: "1oa8hb" }]
 ]);
 /**
  * @license lucide-react v0.462.0 - ISC
@@ -11622,14 +11681,14 @@ function getSideList(side, isStart, rtl) {
 }
 function getOppositeAxisPlacements(placement, flipAlignment, direction, rtl) {
   const alignment = getAlignment(placement);
-  let list = getSideList(getSide(placement), direction === "start", rtl);
+  let list2 = getSideList(getSide(placement), direction === "start", rtl);
   if (alignment) {
-    list = list.map((side) => side + "-" + alignment);
+    list2 = list2.map((side) => side + "-" + alignment);
     if (flipAlignment) {
-      list = list.concat(list.map(getOppositeAlignmentPlacement));
+      list2 = list2.concat(list2.map(getOppositeAlignmentPlacement));
     }
   }
-  return list;
+  return list2;
 }
 function getOppositePlacement(placement) {
   return placement.replace(/left|right|bottom|top/g, (side) => oppositeSideMap[side]);
@@ -12495,10 +12554,10 @@ function getNearestOverflowAncestor(node) {
   }
   return getNearestOverflowAncestor(parentNode);
 }
-function getOverflowAncestors(node, list, traverseIframes) {
+function getOverflowAncestors(node, list2, traverseIframes) {
   var _node$ownerDocument2;
-  if (list === void 0) {
-    list = [];
+  if (list2 === void 0) {
+    list2 = [];
   }
   if (traverseIframes === void 0) {
     traverseIframes = true;
@@ -12508,9 +12567,9 @@ function getOverflowAncestors(node, list, traverseIframes) {
   const win = getWindow(scrollableAncestor);
   if (isBody) {
     const frameElement = getFrameElement(win);
-    return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], frameElement && traverseIframes ? getOverflowAncestors(frameElement) : []);
+    return list2.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], frameElement && traverseIframes ? getOverflowAncestors(frameElement) : []);
   }
-  return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor, [], traverseIframes));
+  return list2.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor, [], traverseIframes));
 }
 function getFrameElement(win) {
   return win.parent && Object.getPrototypeOf(win.parent) ? win.frameElement : null;
@@ -12681,15 +12740,15 @@ function getWindowScrollBarX(element, rect) {
   return rect.left + leftScroll;
 }
 function getDocumentRect(element) {
-  const html = getDocumentElement(element);
+  const html2 = getDocumentElement(element);
   const scroll = getNodeScroll(element);
   const body = element.ownerDocument.body;
-  const width = max(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
-  const height = max(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
+  const width = max(html2.scrollWidth, html2.clientWidth, body.scrollWidth, body.clientWidth);
+  const height = max(html2.scrollHeight, html2.clientHeight, body.scrollHeight, body.clientHeight);
   let x2 = -scroll.scrollLeft + getWindowScrollBarX(element);
   const y2 = -scroll.scrollTop;
   if (getComputedStyle$1(body).direction === "rtl") {
-    x2 += max(html.clientWidth, body.clientWidth) - width;
+    x2 += max(html2.clientWidth, body.clientWidth) - width;
   }
   return {
     width,
@@ -12700,10 +12759,10 @@ function getDocumentRect(element) {
 }
 function getViewportRect(element, strategy) {
   const win = getWindow(element);
-  const html = getDocumentElement(element);
+  const html2 = getDocumentElement(element);
   const visualViewport = win.visualViewport;
-  let width = html.clientWidth;
-  let height = html.clientHeight;
+  let width = html2.clientWidth;
+  let height = html2.clientHeight;
   let x2 = 0;
   let y2 = 0;
   if (visualViewport) {
@@ -16959,6 +17018,25 @@ const CardFooter = reactExports.forwardRef(({ className, ...props }, ref) => /* 
   }
 ));
 CardFooter.displayName = "CardFooter";
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        outline: "text-foreground"
+      }
+    },
+    defaultVariants: {
+      variant: "default"
+    }
+  }
+);
+function Badge({ className, variant, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: cn(badgeVariants({ variant }), className), ...props });
+}
 var NAME = "AspectRatio";
 var AspectRatio$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -16997,163 +17075,6 @@ var AspectRatio$1 = reactExports.forwardRef(
 AspectRatio$1.displayName = NAME;
 var Root$1 = AspectRatio$1;
 const AspectRatio = Root$1;
-const loadAuthors = () => {
-  return [
-    {
-      name: "John Doe",
-      website: "https://johndoe.com"
-    },
-    {
-      name: "Jane Smith",
-      website: "https://janesmith.com"
-    }
-  ];
-};
-const getAuthorWebsite = (authorName) => {
-  var _a2;
-  const authors = loadAuthors();
-  return (_a2 = authors.find((author) => author.name === authorName)) == null ? void 0 : _a2.website;
-};
-function PaperCard({
-  title,
-  authors,
-  conference,
-  volume,
-  number,
-  pages,
-  year,
-  publisher,
-  label,
-  visual,
-  project_page,
-  video,
-  code,
-  arxiv,
-  paper,
-  notes,
-  extra
-}) {
-  const [isHovered, setIsHovered] = reactExports.useState(false);
-  const [isInView, setIsInView] = reactExports.useState(false);
-  const [isVideoLoaded, setIsVideoLoaded] = reactExports.useState(false);
-  const cardRef = reactExports.useRef(null);
-  const videoRef = reactExports.useRef(null);
-  reactExports.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const cardRect = entry.boundingClientRect;
-          const windowHeight = window.innerHeight;
-          const cardCenter = cardRect.top + cardRect.height / 2;
-          const windowCenter = windowHeight / 2;
-          const isNearCenter = Math.abs(cardCenter - windowCenter) < windowHeight / 4;
-          setIsInView(isNearCenter);
-        } else {
-          setIsInView(false);
-        }
-      },
-      {
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: "-25% 0px -25% 0px"
-      }
-    );
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-  const image = "images/" + label + "_before.jpg";
-  var video_hover = null;
-  var image_hover = null;
-  if (visual == "overlay_video") {
-    video_hover = "images/" + label + "_after.mp4";
-  } else if (visual == "overlay_image") {
-    image_hover = "images/" + label + "_after.jpg";
-  }
-  const handleVideoLoad = () => {
-    setIsVideoLoaded(true);
-  };
-  reactExports.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.addEventListener("loadeddata", handleVideoLoad);
-    }
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.removeEventListener("loadeddata", handleVideoLoad);
-      }
-    };
-  }, []);
-  const renderAuthor = (author, index2) => {
-    const website = getAuthorWebsite(author);
-    if (website) {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "a",
-        {
-          href: website,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: "hover:underline text-primary",
-          children: author
-        },
-        author
-      );
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: author }, author);
-  };
-  const renderAuthors = () => {
-    return authors.map((author, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      renderAuthor(author),
-      index2 < authors.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: ", " })
-    ] }));
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Card,
-    {
-      ref: cardRef,
-      className: "overflow-hidden transition-all duration-300 hover:shadow-lg flex",
-      onMouseEnter: () => setIsHovered(true),
-      onMouseLeave: () => setIsHovered(false),
-      children: [
-        (image || video_hover) && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-48 h-48 flex-shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AspectRatio, { ratio: 1 / 1, className: "relative", children: [
-          image && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: image,
-              alt: `Reference image for ${title}`,
-              className: `h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && (video_hover || image_hover) && (isVideoLoaded || image_hover) ? "opacity-0" : "opacity-100"}`
-            }
-          ),
-          video_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "video",
-            {
-              ref: videoRef,
-              src: video_hover,
-              autoPlay: true,
-              muted: true,
-              loop: true,
-              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${(isHovered || isInView) && isVideoLoaded ? "opacity-100" : "opacity-0"}`
-            }
-          ),
-          image_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: image_hover,
-              alt: `Reference image for ${title}`,
-              className: `absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered || isInView ? "opacity-100" : "opacity-0"}`
-            }
-          )
-        ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "p-4 text-left", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-serif font-semibold leading-tight", children: title }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: renderAuthors() }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm font-medium text-primary", children: conference })
-        ] }) })
-      ]
-    }
-  );
-}
 var papaparse_min = { exports: {} };
 /* @license
 Papa Parse
@@ -17575,7 +17496,2336 @@ License: MIT
 })(papaparse_min);
 var papaparse_minExports = papaparse_min.exports;
 const Papa = /* @__PURE__ */ getDefaultExportFromCjs(papaparse_minExports);
-const csvData = 'authors,title,publication,volume,number,pages,year,publisher,label,visual,project_page,video,code,arxiv,paper,notes,Extra\n"Gao, Ruiqi; Holynski, Aleksander; Henzler, Philipp; Brussee, Arthur; Martin-Brualla, Ricardo; Srinivasan, Pratul P; Barron, Jonathan T; Poole, Ben;",CAT3D: Create Anything in 3D with Multi-View Diffusion Models,NeurIPS,,,,2024,,cat3d,overlay_video,https://cat3d.github.io/,,,https://arxiv.org/abs/2405.10314,,,\n"Zhao, Xiaoming; Srinivasan, Pratul P; Verbin, Dor; Park, Keunhong; Martin-Brualla, Ricardo; Henzler, Philipp;",IllumiNeRF: 3D Relighting without Inverse Rendering,NeurIPS,,,,2024,,illum,overlay_video,https://illuminerf.github.io/,,https://github.com/illuminerf/illuminerf_results,https://arxiv.org/abs/2406.06527,,,\n"Karpur, Arjun; Perrotta, Guilherme; Martin-Brualla, Ricardo; Zhou, Howard; Araujo, André;",LFM-3D: Learnable Feature Matching Across Wide Baselines Using 3D Signals,3DV,,,,2024,,lfm3d,static_image,https://research.google/pubs/lfm-3d-learnable-feature-matching-across-wide-baselines-using-3d-signals/,,,https://arxiv.org/abs/2303.12779,,,\n"Jampani, Varun; Maninis, Kevis-Kokitsi; Engelhardt, Andreas; Karpur, Arjun; Truong, Karen; Sargent, Kyle; Popov, Stefan; Araujo, André; Martin-Brualla, Ricardo; Patel, Kaushal; Vlasic, Daniel; Ferrari, Vittorio; Makadia, Ameesh; Liu, Ce; Li, Yuanzhen; Zhou, Howard",NAVI: Category-Agnostic Image Collections with High-Quality 3D Shape and Pose Annotations,NeurIPS,,,,2023,,navi,static_image,https://navidataset.github.io/,,https://github.com/google/navi,https://arxiv.org/abs/2306.09109,,,\n"Park, Keunhong; Henzler, Philipp; Mildenhall, Ben; Barron, Jonathan T; Martin-Brualla, Ricardo","CamP: Camera Preconditioning for Neural Radiance Fields",Siggraph Asia,,,,2023,,camp,overlay_video,https://camp-nerf.github.io/,,,https://arxiv.org/abs/2308.10902,,,\n"Uy, Mikaela Angelina; Martin-Brualla, Ricardo; Guibas, Leonidas; Li, Ke","SCADE: NeRFs from Space Carving with Ambiguity-Aware Depth Estimates",CVPR,,,,2023,,scade,static_image,https://scade-spacecarving-nerfs.github.io/,https://www.youtube.com/watch?v=5XwWZn-kjBU,https://github.com/mikacuy/scade,https://arxiv.org/abs/2303.13582,,,\n"Watson, Daniel; Chan, William; Martin-Brualla, Ricardo; Ho, Jonathan; Tagliasacchi, Andrea; Norouzi, Mohammad",Novel view synthesis with diffusion models,ICLR,,,,2023,,diffusion3d,overlay_video,https://3d-diffusion.github.io/,,,https://arxiv.org/abs/2210.04628,,,\n"Mildenhall, Ben; Hedman, Peter; Martin-Brualla, Ricardo; Srinivasan, Pratul P; Barron, Jonathan T",NeRF in the Dark: High Dynamic Range View Synthesis from Noisy Raw Images,CVPR,,,,2022,,rawnerf,overlay_video,https://bmild.github.io/rawnerf/,https://www.youtube.com/watch?v=JtBS4KBcKVc,,https://arxiv.org/abs/2111.13679,,,\n"Lawrence, Jason; Goldman, Dan B; Achar, Supreeth;  Blascovich, Gregory M; Desloge, Joseph G; Fortes, Tommy; Gomez, Eric M; Haberling, Sascha; Hoppe,  Hugues; Huibers, Andy; Knaus, Claude;  Kuschak,  Brian;  Martin-Brualla, Ricardo; Nover,  Harris; Russell,  Andrew Ian; Seitz, Steven M; Tong, Kevin",Project Starline: A high-fidelity telepresence system,SIGGRAPH Asia,,,,2021,,starline,static_image,,https://www.youtube.com/watch?v=kDgToq5aXh0,,,https://research.google/pubs/pub50903.pdf,,\n"Tewari, Ayush;  Thies, Justus; Mildenhall, Ben; Srinivasan, Pratul P; Tretschk, Edgar; Wang, Yifan; Lassner, Christoph; Sitzmann, Vincent; Martin-Brualla, Ricardo; Lombardi, Stephen; Simon, Tomas; Theobalt, Christian; Niessner, Matthias; Barron, Jonathan T.; Wetzstein, Gordon; Zollhöfer, Michael;  Golyanik, Vladislav",Advances in Neural Rendering,Eurographics STAR report,,,,2022,,star_nerf,static_image,,,,https://arxiv.org/abs/2111.05849,,,\n"Luo, Xuan; Zhang, Xuaner; Yoo, Paul; Martin-Brualla, Ricardo; Lawrence, Jason; Seitz, Steven M;",Time-travel rephotography,SIGGRAPH Asia,,,,2021,,time_travel_rephoto,overlay_image,https://time-travel-rephotography.github.io,,https://github.com/Time-Travel-Rephotography/Time-Travel-Rephotography.github.io,https://arxiv.org/abs/2012.12261,,Featured in [Two Minute Papers](https://www.youtube.com/watch?v=2wcw_O_19XQ),\n"Park, Keunhong; Sinha, Utkarsh; Hedman, Peter; Barron, Jonathan T; Bouaziz, Sofien; Goldman, Dan B; Martin-Brualla, Ricardo; Seitz, Steven M;",HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields,SIGGRAPH Asia,,,,2021,,hypernerf,overlay_video,https://hypernerf.github.io,,https://github.com/google/hypernerf,https://arxiv.org/abs/2106.13228,,,Applying ideas from level set methods to NeRF lets you represent scenes that deform and change shape.\n"Barron, Jonathan T; Mildenhall, Ben; Tancik, Matthew; Hedman, Peter; Martin-Brualla, Ricardo; Srinivasan, Pratul P;",Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields,ICCV,,,,2021,,mipnerf,overlay_video,https://jonbarron.info/mipnerf/,https://youtu.be/EpH175PY1A0,https://github.com/google/mipnerf,https://arxiv.org/abs/2103.13415,,***Best Paper Honorable Mention*** (top 5 papers),\n"Park, Keunhong; Sinha, Utkarsh; Barron, Jonathan T; Bouaziz, Sofien; Goldman, Dan B; Seitz, Steven M; Martin-Brualla, Ricardo;",Nerfies: Deformable neural radiance fields,ICCV,,,5865-5874,2021,,nerfies,overlay_video,https://nerfies.github.io/,https://www.youtube.com/watch?v=MrKrnHhk8IA,,https://arxiv.org/abs/2011.12948,,"***Press:*** [Gizmodo](https://gizmodo.com/nerfies-might-be-the-future-of-selfies-letting-your-fr-1845764332).\nFeatured in [Two Minute Papers](https://www.youtube.com/watch?v=IDMiMKWucaI). ",\n"Azinović, Dejan; Martin-Brualla, Ricardo; Goldman, Dan B; Nießner, Matthias; Thies, Justus;",Neural RGB-D Surface Reconstruction,CVPR,,,,2022,,neural_rgbd,static_image,https://dazinovic.github.io/neural-rgbd-surface-reconstruction/,https://www.youtube.com/watch?time_continue=1&v=iWuSowPsC3g&feature=emb_logo,,https://arxiv.org/abs/2104.04532,,,\n"Martin-Brualla, Ricardo; Radwan, Noha; Sajjadi, Mehdi SM; Barron, Jonathan T; Dosovitskiy, Alexey; Duckworth, Daniel;",Nerf in the wild: Neural radiance fields for unconstrained photo collections,CVPR,,,7210-7219,2021,,nerfw,overlay_video,https://nerf-w.github.io/,https://www.youtube.com/watch?v=mRAKVQj5LRA,,https://arxiv.org/abs/2008.02268,,"***Press:*** [PetaPixel](https://petapixel.com/2020/08/11/this-ai-creates-detailed-3d-renderings-from-thousands-of-tourist-photos/)\nFeatured in [Two Minute Papers](https://www.youtube.com/watch?v=T29O-MhYALw)",\n"Wang, Qianqian; Wang, Zhicheng; Genova, Kyle; Srinivasan, Pratul P; Zhou, Howard; Barron, Jonathan T; Martin-Brualla, Ricardo; Snavely, Noah; Funkhouser, Thomas;",IBRNet: Learning multi-view image-based rendering,CVPR,,,4690-4699,2021,,ibrnet,overlay_video,https://ibrnet.github.io/,,https://github.com/googleinterns/IBRNet,https://arxiv.org/abs/2102.13090,,,\n"Zhang, Edward; Martin-Brualla, Ricardo; Kontkanen, Janne; Curless, Brian L;",No Shadow Left Behind: Removing Objects and their Shadows using Approximate Lighting and Geometry,CVPR,,,16397-16406,2021,,no_shadow,overlay_image,http://grail.cs.washington.edu/projects/shadowremoval/,,,,https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_No_Shadow_Left_Behind_Removing_Objects_and_Their_Shadows_Using_CVPR_2021_paper.pdf,,\n"Rematas, Konstantinos; Martin-Brualla, Ricardo; Ferrari, Vittorio;",Sharf: Shape-conditioned radiance fields from a single view,ICML,,,,2021,,sharf,static_image,http://www.krematas.com/sharf/,,https://github.com/tensorflow/graphics/tree/master/tensorflow_graphics/projects/radiance_fields/sharf,https://arxiv.org/abs/2102.08860,,,\n"Xie, Christopher; Park, Keunhong; Martin-Brualla, Ricardo; Brown, Matthew;",FiG-NeRF: Figure-Ground Neural Radiance Fields for 3D Object Category Modelling,3DV,,,,2021,,fignerf,overlay_video,https://fig-nerf.github.io//,https://www.youtube.com/watch?v=WtZxuv_hkic,,https://arxiv.org/abs/2104.08418,,,\n"Tewari, Ayush; Fried, Ohad; Thies, Justus; Sitzmann, Vincent; Lombardi, Stephen; Sunkavalli, Kalyan; Martin-Brualla, Ricardo; Simon, Tomas; Saragih, Jason; Nießner, Matthias; Pandey, Rohit; Fanello, Sean; Wetzstein, Gordon; Zhu, Jun-Yan; Theobalt, Christian; Agrawala, Maneesh; Shechtman, Eli; Goldman, Dan B; Zollhöfer, Michael;",State of the art on neural rendering,Eurographics STAR report,39,2,701-727,2020,,star_neural_rendering,static_image,,,,https://arxiv.org/abs/2004.03805,,,\n"Luo, Xuan; Kong, Yanmeng; Lawrence, Jason; Martin-Brualla, Ricardo; Seitz, Steven M;",KeystoneDepth: History in 3D,3DV,,,463-472,2020,IEEE,keystone,static_image,https://keystonedepth.cs.washington.edu/,https://www.youtube.com/watch?v=nm2WYARNH1Q,,,https://drive.google.com/file/d/1IZUzIgVXypRIUdP5GsWXlQH85H4kSFJh/view?usp=sharing,,\n"Martin-Brualla, Ricardo; Pandey, Rohit; Bouaziz, Sofien; Brown, Matthew; Goldman, Dan B;",Gelato: Generative latent textured objects,ECCV,,,242-258,2020,"Springer, Cham",gelato,static_image,https://gelato-paper.github.io/,,,https://arxiv.org/abs/2008.04852,,,\n"Trinidad, Marc Comino; Brualla, Ricardo Martin; Kainz, Florian; Kontkanen, Janne;",Multi-view image fusion,ICCV,,,4101-4110,2019,,multiview_fusion,overlay_image,https://augmentedperception.github.io/pixelfusion/,,,,https://openaccess.thecvf.com/content_ICCV_2019/papers/Trinidad_Multi-View_Image_Fusion_ICCV_2019_paper.pdf,,\n"Meshry, Moustafa; Goldman, Dan B; Khamis, Sameh; Hoppe, Hugues; Pandey, Rohit; Snavely, Noah; Martin-Brualla, Ricardo;",Neural rerendering in the wild,CVPR,,,6878-6887,2019,,neural_rerendering,static_image,,https://www.youtube.com/watch?v=E1crWQn_kmY,https://github.com/google/neural_rerendering_in_the_wild,https://arxiv.org/abs/1904.04290,,***Best Paper Award Finalist*** (top 1% of submissions),\n"Pandey, Rohit; Tkach, Anastasia; Yang, Shuoran; Pidlypenskyi, Pavel; Taylor, Jonathan; Martin-Brualla, Ricardo; Tagliasacchi, Andrea; Papandreou, George; Davidson, Philip; Keskin, Cem; Izadi, Shahram; Fanello, Sean;",Volumetric capture of humans with a single rgbd camera via semi-parametric learning,CVPR,,,9709-9718,2019,,volume_cap,static_image,,https://www.youtube.com/watch?v=cbKE4av2NU4,,https://arxiv.org/abs/1905.12162,,,\n"Martin-Brualla, Ricardo; Pandey, Rohit; Yang, Shuoran; Pidlypenskyi, Pavel; Taylor, Jonathan; Valentin, Julien; Khamis, Sameh; Davidson, Philip; Tkach, Anastasia; Lincoln, Peter; Kowdle, Adarsh; Rhemann, Christoph; Goldman, Dan B; Keskin, Cem; Seitz, Steven M; Izadi, Shahram; Fanello, Sean;\n",Lookingood: Enhancing performance capture with real-time neural re-rendering,SIGGRAPH Asia,,,,2018,,lookingood,overlay_image,,https://www.youtube.com/watch?v=Md3tdAKoLGU,,https://arxiv.org/abs/1811.05029,,,\n"Martin-Brualla, Ricardo; Gallup, David; Seitz, Steven M;",3D time-lapse reconstruction from internet photos,ICCV,,,1332-1340,2015,,timelapse_3d,overlay_video,https://grail.cs.washington.edu/projects/timelapse3d/,https://www.youtube.com/watch?v=oQpq4TM96Ow,,,https://grail.cs.washington.edu/projects/timelapse3d/3DTimelapseReconstructionICCV15.pdf,"***Press:*** [PetaPixel](http://petapixel.com/2015/12/12/scientists-create-3d-time-lapse-videos-from-internet-photos-of-landmarks/)\n",\n"Martin-Brualla, Ricardo; Gallup, David; Seitz, Steven M;",Time-lapse mining from internet photos,SIGGRAPH,34,4,1-8,2015,"ACM New York, NY, USA",timelapse_mining,overlay_video,http://grail.cs.washington.edu/projects/timelapse,https://www.youtube.com/watch?v=wptzVm0tngc,,,http://grail.cs.washington.edu/projects/timelapse/TimelapseMiningSIGGRAPH15.pdf,"***Press:*** [WIRED](https://www.wired.com/2015/05/crowdsourced-timelapse/), [BBC](http://www.bbc.com/news/technology-32803455), [Seattle Times](http://www.seattletimes.com/business/technology/uw-students-show-off-computer-science-expertise/) & more.",\n"Martin-Brualla, Ricardo; He, Yanling; Russell, Bryan C; Seitz, Steven M;",The 3d jigsaw puzzle: Mapping large indoor spaces,ECCV,,,1-16,2014,"Springer, Cham",jigsaw,static_image,http://grail.cs.washington.edu/projects/jigsaw3d,https://www.youtube.com/watch?v=CRRhyhaI7zY,,,http://grail.cs.washington.edu/projects/jigsaw3d/ECCV2014_3d_jigsaw_puzzle.pdf,,\n"Russell, Bryan C; Martin-Brualla, Ricardo; Butler, Daniel J; Seitz, Steven M; Zettlemoyer, Luke;",3D Wikipedia: Using online text to automatically label and navigate reconstructed geometry,SIGGRAPH Asia,32,6,1-10,2013,"ACM New York, NY, USA",wiki_3d,overlay_video,http://grail.cs.washington.edu/projects/label3d,https://www.youtube.com/watch?v=CNWFZzmZ0as,,,http://grail.cs.washington.edu/projects/label3d/3D_Wikipedia_SIGGRAPH_Asia_2013.pdf,"***Press:*** [New Scientist](http://www.newscientist.com/article/dn24318-take-virtual-3d-tours-of-tourist-sites-with-wikipedia.html), [Gizmodo](https://gizmodo.com/this-crazy-program-turns-wikipedia-into-3d-models-of-th-1440287279)\n",\n"Zhang, Cha; Cai, Qin; Chou, Philip A; Zhang, Zhengyou; Martin-Brualla, Ricardo;","Viewport: A distributed, immersive teleconferencing system with infrared dot pattern",IEEE MultiMedia,20,1,17-27,2013,IEEE,viewport,viewport,,,,,http://ricardomartinbrualla.com/assets/ieee_multimedia_2013.pdf,,\n"Pasca, Marius; Alfonseca, Enrique; Robledo-Arnuncio, Enrique; Martin-Brualla, Ricardo; Hall, Keith;",The role of query sessions in extracting instance attributes from web search queries,European Conference on Information Retrieval,,,62-74,2010,"Springer, Berlin, Heidelberg",,none,,,,,http://ricardomartinbrualla.com/assets/coling_2010.pdf,,\n"Martin-Brualla, Ricardo; Alfonseca, Enrique; Pasca, Marius; Hall, Keith; Robledo-Arnuncio, Enrique; Ciaramita, Massimiliano;",Instance sense induction from attribute sets,Coling,,,819-827,2010,,,none,,,,,http://ricardomartinbrualla.com/assets/ecir_2010.pdf,,\n';
+const csvData$1 = 'author_name,url\n"Keunhong Park","https://keunhong.com"\n"Jonathan T Barron","https://jonbarron.info"\n"Utkarsh Sinha","https://utkarshsinha.com"\n"Sofien Bouaziz","http://sofienbouaziz.com"\n"Dan B Goldman","https://www.danbgoldman.com"\n"Steven M Seitz","https://homes.cs.washington.edu/~seitz/"\n"Peter Hedman","https://phogzone.com/"\n"Jason Lawrence","https://jasonlawrence.info/"\n"Xuan Luo","https://roxanneluo.github.io/"\n"Xuaner Zhang","https://ceciliavision.github.io/"\n"Christopher Xie","https://chrisdxie.github.io/"\n"Matthew Brown","http://matthewalunbrown.com/"\n"Matthias Nießner","https://www. /"\n"Matthias Niessner","https://www.niessnerlab.org/"\n"Justus Thies","https://justusthies.github.io/"\n"Dejan Azinović","https://niessnerlab.org/members/dejan_azinovic/profile.html"\n"Ben Mildenhall","https://bmild.github.io/"\n"Pratul P Srinivasan","https://pratulsrinivasan.github.io/"\n"Matthew Tancik","https://www.matthewtancik.com/"\n"Noha Radwan","https://scholar.google.de/citations?user=g98QcZUAAAAJ&hl=en"\n"Mehdi SM Sajjadi","https://research.google/people/105804/"\n"Alexey Dosovitskiy","https://scholar.google.de/citations?user=FXNJRDoAAAAJ&hl=en"\n"Daniel Duckworth","https://scholar.google.com/citations?user=2fWmq-4AAAAJ&hl=en"\n"Qianqian Wang","https://www.cs.cornell.edu/~qqw/"\n"Noah Snavely","https://www.cs.cornell.edu/~snavely/"\n"Thomas Funkhouser","https://www.cs.princeton.edu/~funk/"\n"Kyle Genova","https://www.kylegenova.com/"\n"Howard Zhou","https://scholar.google.com/citations?user=Rh9T3EcAAAAJ&hl=en"\n"Edward Zhang","https://ed.ilogues.com/"\n"Janne Kontkanen","https://scholar.google.com/citations?user=MnXc4JQAAAAJ&hl=en"\n"Brian L Curless","https://homes.cs.washington.edu/~curless/"\n"Konstantinos Rematas","https://www.krematas.com"\n"Vittorio Ferrari","https://sites.google.com/view/vittoferrari"\n"Rohit Pandey","https://scholar.google.com/citations?user=KxNaeJIAAAAJ&hl=en"\n"Hugues Hoppe","https://hhoppe.com/"\n"Sameh Khamis","https://www.samehkhamis.com/"\n"Moustafa Meshry","http://www.cs.umd.edu/~mmeshry/"\n"David Gallup","https://scholar.google.com/citations?user=W51KTpcAAAAJ&hl=en"\n"Sean Fanello","https://research.google/people/SeanFanello/"\n"Bryan C Russell","https://bryanrussell.org/"\n"Yanling He","https://www.yanlinghe.com"\n"Luke Zettlemoyer","https://www.cs.washington.edu/people/faculty/lsz"\n"Daniel J Butler","https://scholar.google.com/citations?user=Hg_y1pkAAAAJ&hl=en"\n"Cha Zhang","https://www.microsoft.com/en-us/research/people/chazhang/"\n"Philip A Chou","https://packet.media/"\n"Qin Cai","https://scholar.google.com/citations?user=M_fwZg0AAAAJ&hl=en"\n"Zhengyou Zhang","https://scholar.google.com/citations?user=1I-DKy8AAAAJ&hl=en"\n"Keith Hall","https://research.google/people/author38002/"\n"Enrique Alfonseca","https://scholar.google.com/citations?user=AxGhhfsAAAAJ&hl=en"\n"Marius Pasca","https://research.google/people/author107/"\n"Massimiliano Ciaramita","https://research.google/people/MCiaramita/"\n"Pavel Pidlypenskyi","https://scholar.google.com/citations?user=VXcG6D0AAAAJ&hl=en"\n"Jonathan Taylor","https://scholar.google.ca/citations?user=EEre0EcAAAAJ&hl=en"\n"Julien Valentin","https://scholar.google.co.uk/citations?user=pZPD0hMAAAAJ&hl=en"\n"Anastasia Tkach","https://scholar.google.com/citations?user=hc35dk4AAAAJ&hl=en"\n"Peter Lincoln","https://scholar.google.com/citations?user=r3ehstEAAAAJ&hl=en"\n"Adarsh Kowdle","https://research.google/people/AdarshKowdle/"\n"Christoph Rhemann","https://scholar.google.com/citations?user=5D0_pjcAAAAJ&hl=en"\n"Cem Keskin","https://scholar.google.co.uk/citations?user=9HoiYnYAAAAJ&hl=en"\n"Shahram Izadi","https://scholar.google.com/citations?user=hkCVqYkAAAAJ&hl=en"\n"Ayush Tewari","https://people.mpi-inf.mpg.de/~atewari/"\n"Ohad Fried","https://www.ohadf.com/"\n"Vincent Sitzmann","https://vsitzmann.github.io/"\n"Supreeth Achar","https://www.cs.cmu.edu/~sachar/"\n"Stephen Lombardi","https://stephenlombardi.github.io/"\n"Kalyan Sunkavalli","http://www.kalyans.org/"\n"Tomas Simon","https://scholar.google.com/citations?user=7aabHgsAAAAJ&hl=en"\n"Jason Saragih","https://scholar.google.com/citations?user=ss-IvjMAAAAJ&hl=en"\n"Gordon Wetzstein","https://stanford.edu/~gordonwz/"\n"Jun-Yan Zhu","https://www.cs.cmu.edu/~junyanz/"\n"Christian Theobalt","https://people.mpi-inf.mpg.de/~theobalt/"\n"Maneesh Agrawala","http://graphics.stanford.edu/~maneesh/"\n"Eli Shechtman","https://research.adobe.com/person/eli-shechtman/"\n"Michael Zollhöfer","https://zollhoefer.com/"\n"Andrea Tagliasacchi","https://taiya.github.io/"\n"George Papandreou","https://scholar.google.com/citations?user=6GdwHssAAAAJ&hl=en"\n"Edgar Tretschk","https://people.mpi-inf.mpg.de/~tretschk/"\n"Yifan Wang","https://yifita.github.io/"\n"Vladislav Golyanik","https://people.mpi-inf.mpg.de/~golyanik/"\n"Christoph Lassner","https://christophlassner.de/"\n"Jonathan Ho","http://www.jonathanho.me/"\n"William Chan","http://williamchan.ca/"\n"Mohammad Norouzi","https://norouzi.github.io/"\n"Daniel Watson","https://scholar.google.com/citations?user=_pKKv2QAAAAJ&hl=en"\n"Mikaela Angelina Uy","https://mikacuy.github.io/"\n"Leonidas Guibas","https://geometry.stanford.edu/member/guibas/"\n"Ke Li","https://www.sfu.ca/~keli/"\n"Philipp Henzler","https://henzler.github.io/"\n"Ben Poole","https://cs.stanford.edu/~poole/"\n"Ruiqi Gao","https://ruiqigao.github.io/"\n"Aleksander Holynski","https://holynski.org/"\n"Dor Verbin","https://dorverbin.github.io/"\n"Xiaoming Zhao","https://xiaoming-zhao.com/"\n"André Araujo","https://andrefaraujo.github.io/"\n"Varun Jampani","https://varunjampani.github.io/"\n"Kevis-Kokitsi Maninis","https://www.kmaninis.com/"\n"Ameesh Makadia","https://amakadia.github.io/"\n"Andreas Engelhardt","https://aengelhardt.com/" \n"Ricardo Martin-Brualla","https://www.ricardomartinbrualla.com/"';
+const loadAuthors = () => {
+  const { data } = Papa.parse(csvData$1, {
+    header: true,
+    skipEmptyLines: true
+  });
+  return data.map((row) => ({
+    name: row.author_name,
+    website: row.url
+  }));
+};
+const getAuthorWebsite = (authorName) => {
+  var _a2;
+  const authors = loadAuthors();
+  return (_a2 = authors.find((author) => author.name === authorName)) == null ? void 0 : _a2.website;
+};
+function _getDefaults() {
+  return {
+    async: false,
+    breaks: false,
+    extensions: null,
+    gfm: true,
+    hooks: null,
+    pedantic: false,
+    renderer: null,
+    silent: false,
+    tokenizer: null,
+    walkTokens: null
+  };
+}
+let _defaults = _getDefaults();
+function changeDefaults(newDefaults) {
+  _defaults = newDefaults;
+}
+const noopTest = { exec: () => null };
+function edit(regex, opt = "") {
+  let source = typeof regex === "string" ? regex : regex.source;
+  const obj = {
+    replace: (name, val) => {
+      let valSource = typeof val === "string" ? val : val.source;
+      valSource = valSource.replace(other.caret, "$1");
+      source = source.replace(name, valSource);
+      return obj;
+    },
+    getRegex: () => {
+      return new RegExp(source, opt);
+    }
+  };
+  return obj;
+}
+const other = {
+  codeRemoveIndent: /^(?: {1,4}| {0,3}\t)/gm,
+  outputLinkReplace: /\\([\[\]])/g,
+  indentCodeCompensation: /^(\s+)(?:```)/,
+  beginningSpace: /^\s+/,
+  endingHash: /#$/,
+  startingSpaceChar: /^ /,
+  endingSpaceChar: / $/,
+  nonSpaceChar: /[^ ]/,
+  newLineCharGlobal: /\n/g,
+  tabCharGlobal: /\t/g,
+  multipleSpaceGlobal: /\s+/g,
+  blankLine: /^[ \t]*$/,
+  doubleBlankLine: /\n[ \t]*\n[ \t]*$/,
+  blockquoteStart: /^ {0,3}>/,
+  blockquoteSetextReplace: /\n {0,3}((?:=+|-+) *)(?=\n|$)/g,
+  blockquoteSetextReplace2: /^ {0,3}>[ \t]?/gm,
+  listReplaceTabs: /^\t+/,
+  listReplaceNesting: /^ {1,4}(?=( {4})*[^ ])/g,
+  listIsTask: /^\[[ xX]\] /,
+  listReplaceTask: /^\[[ xX]\] +/,
+  anyLine: /\n.*\n/,
+  hrefBrackets: /^<(.*)>$/,
+  tableDelimiter: /[:|]/,
+  tableAlignChars: /^\||\| *$/g,
+  tableRowBlankLine: /\n[ \t]*$/,
+  tableAlignRight: /^ *-+: *$/,
+  tableAlignCenter: /^ *:-+: *$/,
+  tableAlignLeft: /^ *:-+ *$/,
+  startATag: /^<a /i,
+  endATag: /^<\/a>/i,
+  startPreScriptTag: /^<(pre|code|kbd|script)(\s|>)/i,
+  endPreScriptTag: /^<\/(pre|code|kbd|script)(\s|>)/i,
+  startAngleBracket: /^</,
+  endAngleBracket: />$/,
+  pedanticHrefTitle: /^([^'"]*[^\s])\s+(['"])(.*)\2/,
+  unicodeAlphaNumeric: /[\p{L}\p{N}]/u,
+  escapeTest: /[&<>"']/,
+  escapeReplace: /[&<>"']/g,
+  escapeTestNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,
+  escapeReplaceNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/g,
+  unescapeTest: /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig,
+  caret: /(^|[^\[])\^/g,
+  percentDecode: /%25/g,
+  findPipe: /\|/g,
+  splitPipe: / \|/,
+  slashPipe: /\\\|/g,
+  carriageReturn: /\r\n|\r/g,
+  spaceLine: /^ +$/gm,
+  notSpaceStart: /^\S*/,
+  endingNewline: /\n$/,
+  listItemRegex: (bull) => new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`),
+  nextBulletRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`),
+  hrRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`),
+  fencesBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:\`\`\`|~~~)`),
+  headingBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}#`),
+  htmlBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}<(?:[a-z].*>|!--)`, "i")
+};
+const newline = /^(?:[ \t]*(?:\n|$))+/;
+const blockCode = /^((?: {4}| {0,3}\t)[^\n]+(?:\n(?:[ \t]*(?:\n|$))*)?)+/;
+const fences = /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/;
+const hr = /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/;
+const heading = /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/;
+const bullet = /(?:[*+-]|\d{1,9}[.)])/;
+const lheading = edit(/^(?!bull |blockCode|fences|blockquote|heading|html)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g, bullet).replace(/blockCode/g, /(?: {4}| {0,3}\t)/).replace(/fences/g, / {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g, / {0,3}>/).replace(/heading/g, / {0,3}#{1,6}/).replace(/html/g, / {0,3}<[^\n>]+>\n/).getRegex();
+const _paragraph = /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/;
+const blockText = /^[^\n]+/;
+const _blockLabel = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
+const def = edit(/^ {0,3}\[(label)\]: *(?:\n[ \t]*)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n[ \t]*)?| *\n[ \t]*)(title))? *(?:\n+|$)/).replace("label", _blockLabel).replace("title", /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex();
+const list = edit(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g, bullet).getRegex();
+const _tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
+const _comment = /<!--(?:-?>|[\s\S]*?(?:-->|$))/;
+const html = edit("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$))", "i").replace("comment", _comment).replace("tag", _tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
+const paragraph = edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+const blockquote = edit(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph", paragraph).getRegex();
+const blockNormal = {
+  blockquote,
+  code: blockCode,
+  def,
+  fences,
+  heading,
+  hr,
+  html,
+  lheading,
+  list,
+  newline,
+  paragraph,
+  table: noopTest,
+  text: blockText
+};
+const gfmTable = edit("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", "(?: {4}| {0,3}	)[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+const blockGfm = {
+  ...blockNormal,
+  table: gfmTable,
+  paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", gfmTable).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex()
+};
+const blockPedantic = {
+  ...blockNormal,
+  html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+  def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+  heading: /^(#{1,6})(.*)(?:\n+|$)/,
+  fences: noopTest,
+  // fences not supported
+  lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+  paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", lheading).replace("|table", "").replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").replace("|tag", "").getRegex()
+};
+const escape$1 = /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/;
+const inlineCode = /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/;
+const br = /^( {2,}|\\)\n(?!\s*$)/;
+const inlineText = /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/;
+const _punctuation = /[\p{P}\p{S}]/u;
+const _punctuationOrSpace = /[\s\p{P}\p{S}]/u;
+const _notPunctuationOrSpace = /[^\s\p{P}\p{S}]/u;
+const punctuation = edit(/^((?![*_])punctSpace)/, "u").replace(/punctSpace/g, _punctuationOrSpace).getRegex();
+const _punctuationGfmStrongEm = /(?!~)[\p{P}\p{S}]/u;
+const _punctuationOrSpaceGfmStrongEm = /(?!~)[\s\p{P}\p{S}]/u;
+const _notPunctuationOrSpaceGfmStrongEm = /(?:[^\s\p{P}\p{S}]|~)/u;
+const blockSkip = /\[[^[\]]*?\]\((?:\\.|[^\\\(\)]|\((?:\\.|[^\\\(\)])*\))*\)|`[^`]*?`|<[^<>]*?>/g;
+const emStrongLDelimCore = /^(?:\*+(?:((?!\*)punct)|[^\s*]))|^_+(?:((?!_)punct)|([^\s_]))/;
+const emStrongLDelim = edit(emStrongLDelimCore, "u").replace(/punct/g, _punctuation).getRegex();
+const emStrongLDelimGfm = edit(emStrongLDelimCore, "u").replace(/punct/g, _punctuationGfmStrongEm).getRegex();
+const emStrongRDelimAstCore = "^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)punct(\\*+)(?=[\\s]|$)|notPunctSpace(\\*+)(?!\\*)(?=punctSpace|$)|(?!\\*)punctSpace(\\*+)(?=notPunctSpace)|[\\s](\\*+)(?!\\*)(?=punct)|(?!\\*)punct(\\*+)(?!\\*)(?=punct)|notPunctSpace(\\*+)(?=notPunctSpace)";
+const emStrongRDelimAst = edit(emStrongRDelimAstCore, "gu").replace(/notPunctSpace/g, _notPunctuationOrSpace).replace(/punctSpace/g, _punctuationOrSpace).replace(/punct/g, _punctuation).getRegex();
+const emStrongRDelimAstGfm = edit(emStrongRDelimAstCore, "gu").replace(/notPunctSpace/g, _notPunctuationOrSpaceGfmStrongEm).replace(/punctSpace/g, _punctuationOrSpaceGfmStrongEm).replace(/punct/g, _punctuationGfmStrongEm).getRegex();
+const emStrongRDelimUnd = edit("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)punct(_+)(?=[\\s]|$)|notPunctSpace(_+)(?!_)(?=punctSpace|$)|(?!_)punctSpace(_+)(?=notPunctSpace)|[\\s](_+)(?!_)(?=punct)|(?!_)punct(_+)(?!_)(?=punct)", "gu").replace(/notPunctSpace/g, _notPunctuationOrSpace).replace(/punctSpace/g, _punctuationOrSpace).replace(/punct/g, _punctuation).getRegex();
+const anyPunctuation = edit(/\\(punct)/, "gu").replace(/punct/g, _punctuation).getRegex();
+const autolink = edit(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme", /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email", /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex();
+const _inlineComment = edit(_comment).replace("(?:-->|$)", "-->").getRegex();
+const tag = edit("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
+const _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
+const link = edit(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
+const reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
+const nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
+const reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
+const inlineNormal = {
+  _backpedal: noopTest,
+  // only used for GFM url
+  anyPunctuation,
+  autolink,
+  blockSkip,
+  br,
+  code: inlineCode,
+  del: noopTest,
+  emStrongLDelim,
+  emStrongRDelimAst,
+  emStrongRDelimUnd,
+  escape: escape$1,
+  link,
+  nolink,
+  punctuation,
+  reflink,
+  reflinkSearch,
+  tag,
+  text: inlineText,
+  url: noopTest
+};
+const inlinePedantic = {
+  ...inlineNormal,
+  link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", _inlineLabel).getRegex(),
+  reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", _inlineLabel).getRegex()
+};
+const inlineGfm = {
+  ...inlineNormal,
+  emStrongRDelimAst: emStrongRDelimAstGfm,
+  emStrongLDelim: emStrongLDelimGfm,
+  url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
+  _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+  del: /^(~~?)(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))\1(?=[^~]|$)/,
+  text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+};
+const inlineBreaks = {
+  ...inlineGfm,
+  br: edit(br).replace("{2,}", "*").getRegex(),
+  text: edit(inlineGfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+};
+const block = {
+  normal: blockNormal,
+  gfm: blockGfm,
+  pedantic: blockPedantic
+};
+const inline = {
+  normal: inlineNormal,
+  gfm: inlineGfm,
+  breaks: inlineBreaks,
+  pedantic: inlinePedantic
+};
+const escapeReplacements = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+};
+const getEscapeReplacement = (ch2) => escapeReplacements[ch2];
+function escape(html2, encode) {
+  if (encode) {
+    if (other.escapeTest.test(html2)) {
+      return html2.replace(other.escapeReplace, getEscapeReplacement);
+    }
+  } else {
+    if (other.escapeTestNoEncode.test(html2)) {
+      return html2.replace(other.escapeReplaceNoEncode, getEscapeReplacement);
+    }
+  }
+  return html2;
+}
+function cleanUrl(href) {
+  try {
+    href = encodeURI(href).replace(other.percentDecode, "%");
+  } catch {
+    return null;
+  }
+  return href;
+}
+function splitCells(tableRow, count2) {
+  var _a2;
+  const row = tableRow.replace(other.findPipe, (match, offset2, str) => {
+    let escaped = false;
+    let curr = offset2;
+    while (--curr >= 0 && str[curr] === "\\")
+      escaped = !escaped;
+    if (escaped) {
+      return "|";
+    } else {
+      return " |";
+    }
+  }), cells = row.split(other.splitPipe);
+  let i = 0;
+  if (!cells[0].trim()) {
+    cells.shift();
+  }
+  if (cells.length > 0 && !((_a2 = cells.at(-1)) == null ? void 0 : _a2.trim())) {
+    cells.pop();
+  }
+  if (count2) {
+    if (cells.length > count2) {
+      cells.splice(count2);
+    } else {
+      while (cells.length < count2)
+        cells.push("");
+    }
+  }
+  for (; i < cells.length; i++) {
+    cells[i] = cells[i].trim().replace(other.slashPipe, "|");
+  }
+  return cells;
+}
+function rtrim(str, c, invert) {
+  const l2 = str.length;
+  if (l2 === 0) {
+    return "";
+  }
+  let suffLen = 0;
+  while (suffLen < l2) {
+    const currChar = str.charAt(l2 - suffLen - 1);
+    if (currChar === c && true) {
+      suffLen++;
+    } else {
+      break;
+    }
+  }
+  return str.slice(0, l2 - suffLen);
+}
+function findClosingBracket(str, b) {
+  if (str.indexOf(b[1]) === -1) {
+    return -1;
+  }
+  let level = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "\\") {
+      i++;
+    } else if (str[i] === b[0]) {
+      level++;
+    } else if (str[i] === b[1]) {
+      level--;
+      if (level < 0) {
+        return i;
+      }
+    }
+  }
+  return -1;
+}
+function outputLink(cap, link2, raw, lexer, rules) {
+  const href = link2.href;
+  const title = link2.title || null;
+  const text = cap[1].replace(rules.other.outputLinkReplace, "$1");
+  if (cap[0].charAt(0) !== "!") {
+    lexer.state.inLink = true;
+    const token = {
+      type: "link",
+      raw,
+      href,
+      title,
+      text,
+      tokens: lexer.inlineTokens(text)
+    };
+    lexer.state.inLink = false;
+    return token;
+  }
+  return {
+    type: "image",
+    raw,
+    href,
+    title,
+    text
+  };
+}
+function indentCodeCompensation(raw, text, rules) {
+  const matchIndentToCode = raw.match(rules.other.indentCodeCompensation);
+  if (matchIndentToCode === null) {
+    return text;
+  }
+  const indentToCode = matchIndentToCode[1];
+  return text.split("\n").map((node) => {
+    const matchIndentInNode = node.match(rules.other.beginningSpace);
+    if (matchIndentInNode === null) {
+      return node;
+    }
+    const [indentInNode] = matchIndentInNode;
+    if (indentInNode.length >= indentToCode.length) {
+      return node.slice(indentToCode.length);
+    }
+    return node;
+  }).join("\n");
+}
+class _Tokenizer {
+  // set by the lexer
+  constructor(options) {
+    __publicField(this, "options");
+    __publicField(this, "rules");
+    // set by the lexer
+    __publicField(this, "lexer");
+    this.options = options || _defaults;
+  }
+  space(src) {
+    const cap = this.rules.block.newline.exec(src);
+    if (cap && cap[0].length > 0) {
+      return {
+        type: "space",
+        raw: cap[0]
+      };
+    }
+  }
+  code(src) {
+    const cap = this.rules.block.code.exec(src);
+    if (cap) {
+      const text = cap[0].replace(this.rules.other.codeRemoveIndent, "");
+      return {
+        type: "code",
+        raw: cap[0],
+        codeBlockStyle: "indented",
+        text: !this.options.pedantic ? rtrim(text, "\n") : text
+      };
+    }
+  }
+  fences(src) {
+    const cap = this.rules.block.fences.exec(src);
+    if (cap) {
+      const raw = cap[0];
+      const text = indentCodeCompensation(raw, cap[3] || "", this.rules);
+      return {
+        type: "code",
+        raw,
+        lang: cap[2] ? cap[2].trim().replace(this.rules.inline.anyPunctuation, "$1") : cap[2],
+        text
+      };
+    }
+  }
+  heading(src) {
+    const cap = this.rules.block.heading.exec(src);
+    if (cap) {
+      let text = cap[2].trim();
+      if (this.rules.other.endingHash.test(text)) {
+        const trimmed = rtrim(text, "#");
+        if (this.options.pedantic) {
+          text = trimmed.trim();
+        } else if (!trimmed || this.rules.other.endingSpaceChar.test(trimmed)) {
+          text = trimmed.trim();
+        }
+      }
+      return {
+        type: "heading",
+        raw: cap[0],
+        depth: cap[1].length,
+        text,
+        tokens: this.lexer.inline(text)
+      };
+    }
+  }
+  hr(src) {
+    const cap = this.rules.block.hr.exec(src);
+    if (cap) {
+      return {
+        type: "hr",
+        raw: rtrim(cap[0], "\n")
+      };
+    }
+  }
+  blockquote(src) {
+    const cap = this.rules.block.blockquote.exec(src);
+    if (cap) {
+      let lines = rtrim(cap[0], "\n").split("\n");
+      let raw = "";
+      let text = "";
+      const tokens = [];
+      while (lines.length > 0) {
+        let inBlockquote = false;
+        const currentLines = [];
+        let i;
+        for (i = 0; i < lines.length; i++) {
+          if (this.rules.other.blockquoteStart.test(lines[i])) {
+            currentLines.push(lines[i]);
+            inBlockquote = true;
+          } else if (!inBlockquote) {
+            currentLines.push(lines[i]);
+          } else {
+            break;
+          }
+        }
+        lines = lines.slice(i);
+        const currentRaw = currentLines.join("\n");
+        const currentText = currentRaw.replace(this.rules.other.blockquoteSetextReplace, "\n    $1").replace(this.rules.other.blockquoteSetextReplace2, "");
+        raw = raw ? `${raw}
+${currentRaw}` : currentRaw;
+        text = text ? `${text}
+${currentText}` : currentText;
+        const top = this.lexer.state.top;
+        this.lexer.state.top = true;
+        this.lexer.blockTokens(currentText, tokens, true);
+        this.lexer.state.top = top;
+        if (lines.length === 0) {
+          break;
+        }
+        const lastToken = tokens.at(-1);
+        if ((lastToken == null ? void 0 : lastToken.type) === "code") {
+          break;
+        } else if ((lastToken == null ? void 0 : lastToken.type) === "blockquote") {
+          const oldToken = lastToken;
+          const newText = oldToken.raw + "\n" + lines.join("\n");
+          const newToken = this.blockquote(newText);
+          tokens[tokens.length - 1] = newToken;
+          raw = raw.substring(0, raw.length - oldToken.raw.length) + newToken.raw;
+          text = text.substring(0, text.length - oldToken.text.length) + newToken.text;
+          break;
+        } else if ((lastToken == null ? void 0 : lastToken.type) === "list") {
+          const oldToken = lastToken;
+          const newText = oldToken.raw + "\n" + lines.join("\n");
+          const newToken = this.list(newText);
+          tokens[tokens.length - 1] = newToken;
+          raw = raw.substring(0, raw.length - lastToken.raw.length) + newToken.raw;
+          text = text.substring(0, text.length - oldToken.raw.length) + newToken.raw;
+          lines = newText.substring(tokens.at(-1).raw.length).split("\n");
+          continue;
+        }
+      }
+      return {
+        type: "blockquote",
+        raw,
+        tokens,
+        text
+      };
+    }
+  }
+  list(src) {
+    let cap = this.rules.block.list.exec(src);
+    if (cap) {
+      let bull = cap[1].trim();
+      const isordered = bull.length > 1;
+      const list2 = {
+        type: "list",
+        raw: "",
+        ordered: isordered,
+        start: isordered ? +bull.slice(0, -1) : "",
+        loose: false,
+        items: []
+      };
+      bull = isordered ? `\\d{1,9}\\${bull.slice(-1)}` : `\\${bull}`;
+      if (this.options.pedantic) {
+        bull = isordered ? bull : "[*+-]";
+      }
+      const itemRegex = this.rules.other.listItemRegex(bull);
+      let endsWithBlankLine = false;
+      while (src) {
+        let endEarly = false;
+        let raw = "";
+        let itemContents = "";
+        if (!(cap = itemRegex.exec(src))) {
+          break;
+        }
+        if (this.rules.block.hr.test(src)) {
+          break;
+        }
+        raw = cap[0];
+        src = src.substring(raw.length);
+        let line = cap[2].split("\n", 1)[0].replace(this.rules.other.listReplaceTabs, (t2) => " ".repeat(3 * t2.length));
+        let nextLine = src.split("\n", 1)[0];
+        let blankLine = !line.trim();
+        let indent = 0;
+        if (this.options.pedantic) {
+          indent = 2;
+          itemContents = line.trimStart();
+        } else if (blankLine) {
+          indent = cap[1].length + 1;
+        } else {
+          indent = cap[2].search(this.rules.other.nonSpaceChar);
+          indent = indent > 4 ? 1 : indent;
+          itemContents = line.slice(indent);
+          indent += cap[1].length;
+        }
+        if (blankLine && this.rules.other.blankLine.test(nextLine)) {
+          raw += nextLine + "\n";
+          src = src.substring(nextLine.length + 1);
+          endEarly = true;
+        }
+        if (!endEarly) {
+          const nextBulletRegex = this.rules.other.nextBulletRegex(indent);
+          const hrRegex = this.rules.other.hrRegex(indent);
+          const fencesBeginRegex = this.rules.other.fencesBeginRegex(indent);
+          const headingBeginRegex = this.rules.other.headingBeginRegex(indent);
+          const htmlBeginRegex = this.rules.other.htmlBeginRegex(indent);
+          while (src) {
+            const rawLine = src.split("\n", 1)[0];
+            let nextLineWithoutTabs;
+            nextLine = rawLine;
+            if (this.options.pedantic) {
+              nextLine = nextLine.replace(this.rules.other.listReplaceNesting, "  ");
+              nextLineWithoutTabs = nextLine;
+            } else {
+              nextLineWithoutTabs = nextLine.replace(this.rules.other.tabCharGlobal, "    ");
+            }
+            if (fencesBeginRegex.test(nextLine)) {
+              break;
+            }
+            if (headingBeginRegex.test(nextLine)) {
+              break;
+            }
+            if (htmlBeginRegex.test(nextLine)) {
+              break;
+            }
+            if (nextBulletRegex.test(nextLine)) {
+              break;
+            }
+            if (hrRegex.test(nextLine)) {
+              break;
+            }
+            if (nextLineWithoutTabs.search(this.rules.other.nonSpaceChar) >= indent || !nextLine.trim()) {
+              itemContents += "\n" + nextLineWithoutTabs.slice(indent);
+            } else {
+              if (blankLine) {
+                break;
+              }
+              if (line.replace(this.rules.other.tabCharGlobal, "    ").search(this.rules.other.nonSpaceChar) >= 4) {
+                break;
+              }
+              if (fencesBeginRegex.test(line)) {
+                break;
+              }
+              if (headingBeginRegex.test(line)) {
+                break;
+              }
+              if (hrRegex.test(line)) {
+                break;
+              }
+              itemContents += "\n" + nextLine;
+            }
+            if (!blankLine && !nextLine.trim()) {
+              blankLine = true;
+            }
+            raw += rawLine + "\n";
+            src = src.substring(rawLine.length + 1);
+            line = nextLineWithoutTabs.slice(indent);
+          }
+        }
+        if (!list2.loose) {
+          if (endsWithBlankLine) {
+            list2.loose = true;
+          } else if (this.rules.other.doubleBlankLine.test(raw)) {
+            endsWithBlankLine = true;
+          }
+        }
+        let istask = null;
+        let ischecked;
+        if (this.options.gfm) {
+          istask = this.rules.other.listIsTask.exec(itemContents);
+          if (istask) {
+            ischecked = istask[0] !== "[ ] ";
+            itemContents = itemContents.replace(this.rules.other.listReplaceTask, "");
+          }
+        }
+        list2.items.push({
+          type: "list_item",
+          raw,
+          task: !!istask,
+          checked: ischecked,
+          loose: false,
+          text: itemContents,
+          tokens: []
+        });
+        list2.raw += raw;
+      }
+      const lastItem = list2.items.at(-1);
+      if (lastItem) {
+        lastItem.raw = lastItem.raw.trimEnd();
+        lastItem.text = lastItem.text.trimEnd();
+      } else {
+        return;
+      }
+      list2.raw = list2.raw.trimEnd();
+      for (let i = 0; i < list2.items.length; i++) {
+        this.lexer.state.top = false;
+        list2.items[i].tokens = this.lexer.blockTokens(list2.items[i].text, []);
+        if (!list2.loose) {
+          const spacers = list2.items[i].tokens.filter((t2) => t2.type === "space");
+          const hasMultipleLineBreaks = spacers.length > 0 && spacers.some((t2) => this.rules.other.anyLine.test(t2.raw));
+          list2.loose = hasMultipleLineBreaks;
+        }
+      }
+      if (list2.loose) {
+        for (let i = 0; i < list2.items.length; i++) {
+          list2.items[i].loose = true;
+        }
+      }
+      return list2;
+    }
+  }
+  html(src) {
+    const cap = this.rules.block.html.exec(src);
+    if (cap) {
+      const token = {
+        type: "html",
+        block: true,
+        raw: cap[0],
+        pre: cap[1] === "pre" || cap[1] === "script" || cap[1] === "style",
+        text: cap[0]
+      };
+      return token;
+    }
+  }
+  def(src) {
+    const cap = this.rules.block.def.exec(src);
+    if (cap) {
+      const tag2 = cap[1].toLowerCase().replace(this.rules.other.multipleSpaceGlobal, " ");
+      const href = cap[2] ? cap[2].replace(this.rules.other.hrefBrackets, "$1").replace(this.rules.inline.anyPunctuation, "$1") : "";
+      const title = cap[3] ? cap[3].substring(1, cap[3].length - 1).replace(this.rules.inline.anyPunctuation, "$1") : cap[3];
+      return {
+        type: "def",
+        tag: tag2,
+        raw: cap[0],
+        href,
+        title
+      };
+    }
+  }
+  table(src) {
+    var _a2;
+    const cap = this.rules.block.table.exec(src);
+    if (!cap) {
+      return;
+    }
+    if (!this.rules.other.tableDelimiter.test(cap[2])) {
+      return;
+    }
+    const headers = splitCells(cap[1]);
+    const aligns = cap[2].replace(this.rules.other.tableAlignChars, "").split("|");
+    const rows = ((_a2 = cap[3]) == null ? void 0 : _a2.trim()) ? cap[3].replace(this.rules.other.tableRowBlankLine, "").split("\n") : [];
+    const item = {
+      type: "table",
+      raw: cap[0],
+      header: [],
+      align: [],
+      rows: []
+    };
+    if (headers.length !== aligns.length) {
+      return;
+    }
+    for (const align of aligns) {
+      if (this.rules.other.tableAlignRight.test(align)) {
+        item.align.push("right");
+      } else if (this.rules.other.tableAlignCenter.test(align)) {
+        item.align.push("center");
+      } else if (this.rules.other.tableAlignLeft.test(align)) {
+        item.align.push("left");
+      } else {
+        item.align.push(null);
+      }
+    }
+    for (let i = 0; i < headers.length; i++) {
+      item.header.push({
+        text: headers[i],
+        tokens: this.lexer.inline(headers[i]),
+        header: true,
+        align: item.align[i]
+      });
+    }
+    for (const row of rows) {
+      item.rows.push(splitCells(row, item.header.length).map((cell, i) => {
+        return {
+          text: cell,
+          tokens: this.lexer.inline(cell),
+          header: false,
+          align: item.align[i]
+        };
+      }));
+    }
+    return item;
+  }
+  lheading(src) {
+    const cap = this.rules.block.lheading.exec(src);
+    if (cap) {
+      return {
+        type: "heading",
+        raw: cap[0],
+        depth: cap[2].charAt(0) === "=" ? 1 : 2,
+        text: cap[1],
+        tokens: this.lexer.inline(cap[1])
+      };
+    }
+  }
+  paragraph(src) {
+    const cap = this.rules.block.paragraph.exec(src);
+    if (cap) {
+      const text = cap[1].charAt(cap[1].length - 1) === "\n" ? cap[1].slice(0, -1) : cap[1];
+      return {
+        type: "paragraph",
+        raw: cap[0],
+        text,
+        tokens: this.lexer.inline(text)
+      };
+    }
+  }
+  text(src) {
+    const cap = this.rules.block.text.exec(src);
+    if (cap) {
+      return {
+        type: "text",
+        raw: cap[0],
+        text: cap[0],
+        tokens: this.lexer.inline(cap[0])
+      };
+    }
+  }
+  escape(src) {
+    const cap = this.rules.inline.escape.exec(src);
+    if (cap) {
+      return {
+        type: "escape",
+        raw: cap[0],
+        text: cap[1]
+      };
+    }
+  }
+  tag(src) {
+    const cap = this.rules.inline.tag.exec(src);
+    if (cap) {
+      if (!this.lexer.state.inLink && this.rules.other.startATag.test(cap[0])) {
+        this.lexer.state.inLink = true;
+      } else if (this.lexer.state.inLink && this.rules.other.endATag.test(cap[0])) {
+        this.lexer.state.inLink = false;
+      }
+      if (!this.lexer.state.inRawBlock && this.rules.other.startPreScriptTag.test(cap[0])) {
+        this.lexer.state.inRawBlock = true;
+      } else if (this.lexer.state.inRawBlock && this.rules.other.endPreScriptTag.test(cap[0])) {
+        this.lexer.state.inRawBlock = false;
+      }
+      return {
+        type: "html",
+        raw: cap[0],
+        inLink: this.lexer.state.inLink,
+        inRawBlock: this.lexer.state.inRawBlock,
+        block: false,
+        text: cap[0]
+      };
+    }
+  }
+  link(src) {
+    const cap = this.rules.inline.link.exec(src);
+    if (cap) {
+      const trimmedUrl = cap[2].trim();
+      if (!this.options.pedantic && this.rules.other.startAngleBracket.test(trimmedUrl)) {
+        if (!this.rules.other.endAngleBracket.test(trimmedUrl)) {
+          return;
+        }
+        const rtrimSlash = rtrim(trimmedUrl.slice(0, -1), "\\");
+        if ((trimmedUrl.length - rtrimSlash.length) % 2 === 0) {
+          return;
+        }
+      } else {
+        const lastParenIndex = findClosingBracket(cap[2], "()");
+        if (lastParenIndex > -1) {
+          const start = cap[0].indexOf("!") === 0 ? 5 : 4;
+          const linkLen = start + cap[1].length + lastParenIndex;
+          cap[2] = cap[2].substring(0, lastParenIndex);
+          cap[0] = cap[0].substring(0, linkLen).trim();
+          cap[3] = "";
+        }
+      }
+      let href = cap[2];
+      let title = "";
+      if (this.options.pedantic) {
+        const link2 = this.rules.other.pedanticHrefTitle.exec(href);
+        if (link2) {
+          href = link2[1];
+          title = link2[3];
+        }
+      } else {
+        title = cap[3] ? cap[3].slice(1, -1) : "";
+      }
+      href = href.trim();
+      if (this.rules.other.startAngleBracket.test(href)) {
+        if (this.options.pedantic && !this.rules.other.endAngleBracket.test(trimmedUrl)) {
+          href = href.slice(1);
+        } else {
+          href = href.slice(1, -1);
+        }
+      }
+      return outputLink(cap, {
+        href: href ? href.replace(this.rules.inline.anyPunctuation, "$1") : href,
+        title: title ? title.replace(this.rules.inline.anyPunctuation, "$1") : title
+      }, cap[0], this.lexer, this.rules);
+    }
+  }
+  reflink(src, links) {
+    let cap;
+    if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
+      const linkString = (cap[2] || cap[1]).replace(this.rules.other.multipleSpaceGlobal, " ");
+      const link2 = links[linkString.toLowerCase()];
+      if (!link2) {
+        const text = cap[0].charAt(0);
+        return {
+          type: "text",
+          raw: text,
+          text
+        };
+      }
+      return outputLink(cap, link2, cap[0], this.lexer, this.rules);
+    }
+  }
+  emStrong(src, maskedSrc, prevChar = "") {
+    let match = this.rules.inline.emStrongLDelim.exec(src);
+    if (!match)
+      return;
+    if (match[3] && prevChar.match(this.rules.other.unicodeAlphaNumeric))
+      return;
+    const nextChar = match[1] || match[2] || "";
+    if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
+      const lLength = [...match[0]].length - 1;
+      let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
+      const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
+      endReg.lastIndex = 0;
+      maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
+      while ((match = endReg.exec(maskedSrc)) != null) {
+        rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
+        if (!rDelim)
+          continue;
+        rLength = [...rDelim].length;
+        if (match[3] || match[4]) {
+          delimTotal += rLength;
+          continue;
+        } else if (match[5] || match[6]) {
+          if (lLength % 3 && !((lLength + rLength) % 3)) {
+            midDelimTotal += rLength;
+            continue;
+          }
+        }
+        delimTotal -= rLength;
+        if (delimTotal > 0)
+          continue;
+        rLength = Math.min(rLength, rLength + delimTotal + midDelimTotal);
+        const lastCharLength = [...match[0]][0].length;
+        const raw = src.slice(0, lLength + match.index + lastCharLength + rLength);
+        if (Math.min(lLength, rLength) % 2) {
+          const text2 = raw.slice(1, -1);
+          return {
+            type: "em",
+            raw,
+            text: text2,
+            tokens: this.lexer.inlineTokens(text2)
+          };
+        }
+        const text = raw.slice(2, -2);
+        return {
+          type: "strong",
+          raw,
+          text,
+          tokens: this.lexer.inlineTokens(text)
+        };
+      }
+    }
+  }
+  codespan(src) {
+    const cap = this.rules.inline.code.exec(src);
+    if (cap) {
+      let text = cap[2].replace(this.rules.other.newLineCharGlobal, " ");
+      const hasNonSpaceChars = this.rules.other.nonSpaceChar.test(text);
+      const hasSpaceCharsOnBothEnds = this.rules.other.startingSpaceChar.test(text) && this.rules.other.endingSpaceChar.test(text);
+      if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
+        text = text.substring(1, text.length - 1);
+      }
+      return {
+        type: "codespan",
+        raw: cap[0],
+        text
+      };
+    }
+  }
+  br(src) {
+    const cap = this.rules.inline.br.exec(src);
+    if (cap) {
+      return {
+        type: "br",
+        raw: cap[0]
+      };
+    }
+  }
+  del(src) {
+    const cap = this.rules.inline.del.exec(src);
+    if (cap) {
+      return {
+        type: "del",
+        raw: cap[0],
+        text: cap[2],
+        tokens: this.lexer.inlineTokens(cap[2])
+      };
+    }
+  }
+  autolink(src) {
+    const cap = this.rules.inline.autolink.exec(src);
+    if (cap) {
+      let text, href;
+      if (cap[2] === "@") {
+        text = cap[1];
+        href = "mailto:" + text;
+      } else {
+        text = cap[1];
+        href = text;
+      }
+      return {
+        type: "link",
+        raw: cap[0],
+        text,
+        href,
+        tokens: [
+          {
+            type: "text",
+            raw: text,
+            text
+          }
+        ]
+      };
+    }
+  }
+  url(src) {
+    var _a2;
+    let cap;
+    if (cap = this.rules.inline.url.exec(src)) {
+      let text, href;
+      if (cap[2] === "@") {
+        text = cap[0];
+        href = "mailto:" + text;
+      } else {
+        let prevCapZero;
+        do {
+          prevCapZero = cap[0];
+          cap[0] = ((_a2 = this.rules.inline._backpedal.exec(cap[0])) == null ? void 0 : _a2[0]) ?? "";
+        } while (prevCapZero !== cap[0]);
+        text = cap[0];
+        if (cap[1] === "www.") {
+          href = "http://" + cap[0];
+        } else {
+          href = cap[0];
+        }
+      }
+      return {
+        type: "link",
+        raw: cap[0],
+        text,
+        href,
+        tokens: [
+          {
+            type: "text",
+            raw: text,
+            text
+          }
+        ]
+      };
+    }
+  }
+  inlineText(src) {
+    const cap = this.rules.inline.text.exec(src);
+    if (cap) {
+      const escaped = this.lexer.state.inRawBlock;
+      return {
+        type: "text",
+        raw: cap[0],
+        text: cap[0],
+        escaped
+      };
+    }
+  }
+}
+class _Lexer {
+  constructor(options) {
+    __publicField(this, "tokens");
+    __publicField(this, "options");
+    __publicField(this, "state");
+    __publicField(this, "tokenizer");
+    __publicField(this, "inlineQueue");
+    this.tokens = [];
+    this.tokens.links = /* @__PURE__ */ Object.create(null);
+    this.options = options || _defaults;
+    this.options.tokenizer = this.options.tokenizer || new _Tokenizer();
+    this.tokenizer = this.options.tokenizer;
+    this.tokenizer.options = this.options;
+    this.tokenizer.lexer = this;
+    this.inlineQueue = [];
+    this.state = {
+      inLink: false,
+      inRawBlock: false,
+      top: true
+    };
+    const rules = {
+      other,
+      block: block.normal,
+      inline: inline.normal
+    };
+    if (this.options.pedantic) {
+      rules.block = block.pedantic;
+      rules.inline = inline.pedantic;
+    } else if (this.options.gfm) {
+      rules.block = block.gfm;
+      if (this.options.breaks) {
+        rules.inline = inline.breaks;
+      } else {
+        rules.inline = inline.gfm;
+      }
+    }
+    this.tokenizer.rules = rules;
+  }
+  /**
+   * Expose Rules
+   */
+  static get rules() {
+    return {
+      block,
+      inline
+    };
+  }
+  /**
+   * Static Lex Method
+   */
+  static lex(src, options) {
+    const lexer = new _Lexer(options);
+    return lexer.lex(src);
+  }
+  /**
+   * Static Lex Inline Method
+   */
+  static lexInline(src, options) {
+    const lexer = new _Lexer(options);
+    return lexer.inlineTokens(src);
+  }
+  /**
+   * Preprocessing
+   */
+  lex(src) {
+    src = src.replace(other.carriageReturn, "\n");
+    this.blockTokens(src, this.tokens);
+    for (let i = 0; i < this.inlineQueue.length; i++) {
+      const next = this.inlineQueue[i];
+      this.inlineTokens(next.src, next.tokens);
+    }
+    this.inlineQueue = [];
+    return this.tokens;
+  }
+  blockTokens(src, tokens = [], lastParagraphClipped = false) {
+    var _a2, _b2, _c2;
+    if (this.options.pedantic) {
+      src = src.replace(other.tabCharGlobal, "    ").replace(other.spaceLine, "");
+    }
+    while (src) {
+      let token;
+      if ((_b2 = (_a2 = this.options.extensions) == null ? void 0 : _a2.block) == null ? void 0 : _b2.some((extTokenizer) => {
+        if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
+          src = src.substring(token.raw.length);
+          tokens.push(token);
+          return true;
+        }
+        return false;
+      })) {
+        continue;
+      }
+      if (token = this.tokenizer.space(src)) {
+        src = src.substring(token.raw.length);
+        const lastToken = tokens.at(-1);
+        if (token.raw.length === 1 && lastToken !== void 0) {
+          lastToken.raw += "\n";
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.code(src)) {
+        src = src.substring(token.raw.length);
+        const lastToken = tokens.at(-1);
+        if ((lastToken == null ? void 0 : lastToken.type) === "paragraph" || (lastToken == null ? void 0 : lastToken.type) === "text") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue.at(-1).src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.fences(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.heading(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.hr(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.blockquote(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.list(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.html(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.def(src)) {
+        src = src.substring(token.raw.length);
+        const lastToken = tokens.at(-1);
+        if ((lastToken == null ? void 0 : lastToken.type) === "paragraph" || (lastToken == null ? void 0 : lastToken.type) === "text") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.raw;
+          this.inlineQueue.at(-1).src = lastToken.text;
+        } else if (!this.tokens.links[token.tag]) {
+          this.tokens.links[token.tag] = {
+            href: token.href,
+            title: token.title
+          };
+        }
+        continue;
+      }
+      if (token = this.tokenizer.table(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.lheading(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      let cutSrc = src;
+      if ((_c2 = this.options.extensions) == null ? void 0 : _c2.startBlock) {
+        let startIndex = Infinity;
+        const tempSrc = src.slice(1);
+        let tempStart;
+        this.options.extensions.startBlock.forEach((getStartIndex) => {
+          tempStart = getStartIndex.call({ lexer: this }, tempSrc);
+          if (typeof tempStart === "number" && tempStart >= 0) {
+            startIndex = Math.min(startIndex, tempStart);
+          }
+        });
+        if (startIndex < Infinity && startIndex >= 0) {
+          cutSrc = src.substring(0, startIndex + 1);
+        }
+      }
+      if (this.state.top && (token = this.tokenizer.paragraph(cutSrc))) {
+        const lastToken = tokens.at(-1);
+        if (lastParagraphClipped && (lastToken == null ? void 0 : lastToken.type) === "paragraph") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue.pop();
+          this.inlineQueue.at(-1).src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        lastParagraphClipped = cutSrc.length !== src.length;
+        src = src.substring(token.raw.length);
+        continue;
+      }
+      if (token = this.tokenizer.text(src)) {
+        src = src.substring(token.raw.length);
+        const lastToken = tokens.at(-1);
+        if ((lastToken == null ? void 0 : lastToken.type) === "text") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue.pop();
+          this.inlineQueue.at(-1).src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (src) {
+        const errMsg = "Infinite loop on byte: " + src.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(errMsg);
+          break;
+        } else {
+          throw new Error(errMsg);
+        }
+      }
+    }
+    this.state.top = true;
+    return tokens;
+  }
+  inline(src, tokens = []) {
+    this.inlineQueue.push({ src, tokens });
+    return tokens;
+  }
+  /**
+   * Lexing/Compiling
+   */
+  inlineTokens(src, tokens = []) {
+    var _a2, _b2, _c2;
+    let maskedSrc = src;
+    let match = null;
+    if (this.tokens.links) {
+      const links = Object.keys(this.tokens.links);
+      if (links.length > 0) {
+        while ((match = this.tokenizer.rules.inline.reflinkSearch.exec(maskedSrc)) != null) {
+          if (links.includes(match[0].slice(match[0].lastIndexOf("[") + 1, -1))) {
+            maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex);
+          }
+        }
+      }
+    }
+    while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
+      maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+    }
+    while ((match = this.tokenizer.rules.inline.anyPunctuation.exec(maskedSrc)) != null) {
+      maskedSrc = maskedSrc.slice(0, match.index) + "++" + maskedSrc.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
+    }
+    let keepPrevChar = false;
+    let prevChar = "";
+    while (src) {
+      if (!keepPrevChar) {
+        prevChar = "";
+      }
+      keepPrevChar = false;
+      let token;
+      if ((_b2 = (_a2 = this.options.extensions) == null ? void 0 : _a2.inline) == null ? void 0 : _b2.some((extTokenizer) => {
+        if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
+          src = src.substring(token.raw.length);
+          tokens.push(token);
+          return true;
+        }
+        return false;
+      })) {
+        continue;
+      }
+      if (token = this.tokenizer.escape(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.tag(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.link(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.reflink(src, this.tokens.links)) {
+        src = src.substring(token.raw.length);
+        const lastToken = tokens.at(-1);
+        if (token.type === "text" && (lastToken == null ? void 0 : lastToken.type) === "text") {
+          lastToken.raw += token.raw;
+          lastToken.text += token.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.codespan(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.br(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.del(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.autolink(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (!this.state.inLink && (token = this.tokenizer.url(src))) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      let cutSrc = src;
+      if ((_c2 = this.options.extensions) == null ? void 0 : _c2.startInline) {
+        let startIndex = Infinity;
+        const tempSrc = src.slice(1);
+        let tempStart;
+        this.options.extensions.startInline.forEach((getStartIndex) => {
+          tempStart = getStartIndex.call({ lexer: this }, tempSrc);
+          if (typeof tempStart === "number" && tempStart >= 0) {
+            startIndex = Math.min(startIndex, tempStart);
+          }
+        });
+        if (startIndex < Infinity && startIndex >= 0) {
+          cutSrc = src.substring(0, startIndex + 1);
+        }
+      }
+      if (token = this.tokenizer.inlineText(cutSrc)) {
+        src = src.substring(token.raw.length);
+        if (token.raw.slice(-1) !== "_") {
+          prevChar = token.raw.slice(-1);
+        }
+        keepPrevChar = true;
+        const lastToken = tokens.at(-1);
+        if ((lastToken == null ? void 0 : lastToken.type) === "text") {
+          lastToken.raw += token.raw;
+          lastToken.text += token.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (src) {
+        const errMsg = "Infinite loop on byte: " + src.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(errMsg);
+          break;
+        } else {
+          throw new Error(errMsg);
+        }
+      }
+    }
+    return tokens;
+  }
+}
+class _Renderer {
+  // set by the parser
+  constructor(options) {
+    __publicField(this, "options");
+    __publicField(this, "parser");
+    this.options = options || _defaults;
+  }
+  space(token) {
+    return "";
+  }
+  code({ text, lang, escaped }) {
+    var _a2;
+    const langString = (_a2 = (lang || "").match(other.notSpaceStart)) == null ? void 0 : _a2[0];
+    const code = text.replace(other.endingNewline, "") + "\n";
+    if (!langString) {
+      return "<pre><code>" + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+    }
+    return '<pre><code class="language-' + escape(langString) + '">' + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+  }
+  blockquote({ tokens }) {
+    const body = this.parser.parse(tokens);
+    return `<blockquote>
+${body}</blockquote>
+`;
+  }
+  html({ text }) {
+    return text;
+  }
+  heading({ tokens, depth }) {
+    return `<h${depth}>${this.parser.parseInline(tokens)}</h${depth}>
+`;
+  }
+  hr(token) {
+    return "<hr>\n";
+  }
+  list(token) {
+    const ordered = token.ordered;
+    const start = token.start;
+    let body = "";
+    for (let j2 = 0; j2 < token.items.length; j2++) {
+      const item = token.items[j2];
+      body += this.listitem(item);
+    }
+    const type = ordered ? "ol" : "ul";
+    const startAttr = ordered && start !== 1 ? ' start="' + start + '"' : "";
+    return "<" + type + startAttr + ">\n" + body + "</" + type + ">\n";
+  }
+  listitem(item) {
+    var _a2;
+    let itemBody = "";
+    if (item.task) {
+      const checkbox = this.checkbox({ checked: !!item.checked });
+      if (item.loose) {
+        if (((_a2 = item.tokens[0]) == null ? void 0 : _a2.type) === "paragraph") {
+          item.tokens[0].text = checkbox + " " + item.tokens[0].text;
+          if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === "text") {
+            item.tokens[0].tokens[0].text = checkbox + " " + escape(item.tokens[0].tokens[0].text);
+            item.tokens[0].tokens[0].escaped = true;
+          }
+        } else {
+          item.tokens.unshift({
+            type: "text",
+            raw: checkbox + " ",
+            text: checkbox + " ",
+            escaped: true
+          });
+        }
+      } else {
+        itemBody += checkbox + " ";
+      }
+    }
+    itemBody += this.parser.parse(item.tokens, !!item.loose);
+    return `<li>${itemBody}</li>
+`;
+  }
+  checkbox({ checked }) {
+    return "<input " + (checked ? 'checked="" ' : "") + 'disabled="" type="checkbox">';
+  }
+  paragraph({ tokens }) {
+    return `<p>${this.parser.parseInline(tokens)}</p>
+`;
+  }
+  table(token) {
+    let header = "";
+    let cell = "";
+    for (let j2 = 0; j2 < token.header.length; j2++) {
+      cell += this.tablecell(token.header[j2]);
+    }
+    header += this.tablerow({ text: cell });
+    let body = "";
+    for (let j2 = 0; j2 < token.rows.length; j2++) {
+      const row = token.rows[j2];
+      cell = "";
+      for (let k2 = 0; k2 < row.length; k2++) {
+        cell += this.tablecell(row[k2]);
+      }
+      body += this.tablerow({ text: cell });
+    }
+    if (body)
+      body = `<tbody>${body}</tbody>`;
+    return "<table>\n<thead>\n" + header + "</thead>\n" + body + "</table>\n";
+  }
+  tablerow({ text }) {
+    return `<tr>
+${text}</tr>
+`;
+  }
+  tablecell(token) {
+    const content = this.parser.parseInline(token.tokens);
+    const type = token.header ? "th" : "td";
+    const tag2 = token.align ? `<${type} align="${token.align}">` : `<${type}>`;
+    return tag2 + content + `</${type}>
+`;
+  }
+  /**
+   * span level renderer
+   */
+  strong({ tokens }) {
+    return `<strong>${this.parser.parseInline(tokens)}</strong>`;
+  }
+  em({ tokens }) {
+    return `<em>${this.parser.parseInline(tokens)}</em>`;
+  }
+  codespan({ text }) {
+    return `<code>${escape(text, true)}</code>`;
+  }
+  br(token) {
+    return "<br>";
+  }
+  del({ tokens }) {
+    return `<del>${this.parser.parseInline(tokens)}</del>`;
+  }
+  link({ href, title, tokens }) {
+    const text = this.parser.parseInline(tokens);
+    const cleanHref = cleanUrl(href);
+    if (cleanHref === null) {
+      return text;
+    }
+    href = cleanHref;
+    let out = '<a href="' + href + '"';
+    if (title) {
+      out += ' title="' + escape(title) + '"';
+    }
+    out += ">" + text + "</a>";
+    return out;
+  }
+  image({ href, title, text }) {
+    const cleanHref = cleanUrl(href);
+    if (cleanHref === null) {
+      return escape(text);
+    }
+    href = cleanHref;
+    let out = `<img src="${href}" alt="${text}"`;
+    if (title) {
+      out += ` title="${escape(title)}"`;
+    }
+    out += ">";
+    return out;
+  }
+  text(token) {
+    return "tokens" in token && token.tokens ? this.parser.parseInline(token.tokens) : "escaped" in token && token.escaped ? token.text : escape(token.text);
+  }
+}
+class _TextRenderer {
+  // no need for block level renderers
+  strong({ text }) {
+    return text;
+  }
+  em({ text }) {
+    return text;
+  }
+  codespan({ text }) {
+    return text;
+  }
+  del({ text }) {
+    return text;
+  }
+  html({ text }) {
+    return text;
+  }
+  text({ text }) {
+    return text;
+  }
+  link({ text }) {
+    return "" + text;
+  }
+  image({ text }) {
+    return "" + text;
+  }
+  br() {
+    return "";
+  }
+}
+class _Parser {
+  constructor(options) {
+    __publicField(this, "options");
+    __publicField(this, "renderer");
+    __publicField(this, "textRenderer");
+    this.options = options || _defaults;
+    this.options.renderer = this.options.renderer || new _Renderer();
+    this.renderer = this.options.renderer;
+    this.renderer.options = this.options;
+    this.renderer.parser = this;
+    this.textRenderer = new _TextRenderer();
+  }
+  /**
+   * Static Parse Method
+   */
+  static parse(tokens, options) {
+    const parser = new _Parser(options);
+    return parser.parse(tokens);
+  }
+  /**
+   * Static Parse Inline Method
+   */
+  static parseInline(tokens, options) {
+    const parser = new _Parser(options);
+    return parser.parseInline(tokens);
+  }
+  /**
+   * Parse Loop
+   */
+  parse(tokens, top = true) {
+    var _a2, _b2;
+    let out = "";
+    for (let i = 0; i < tokens.length; i++) {
+      const anyToken = tokens[i];
+      if ((_b2 = (_a2 = this.options.extensions) == null ? void 0 : _a2.renderers) == null ? void 0 : _b2[anyToken.type]) {
+        const genericToken = anyToken;
+        const ret = this.options.extensions.renderers[genericToken.type].call({ parser: this }, genericToken);
+        if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(genericToken.type)) {
+          out += ret || "";
+          continue;
+        }
+      }
+      const token = anyToken;
+      switch (token.type) {
+        case "space": {
+          out += this.renderer.space(token);
+          continue;
+        }
+        case "hr": {
+          out += this.renderer.hr(token);
+          continue;
+        }
+        case "heading": {
+          out += this.renderer.heading(token);
+          continue;
+        }
+        case "code": {
+          out += this.renderer.code(token);
+          continue;
+        }
+        case "table": {
+          out += this.renderer.table(token);
+          continue;
+        }
+        case "blockquote": {
+          out += this.renderer.blockquote(token);
+          continue;
+        }
+        case "list": {
+          out += this.renderer.list(token);
+          continue;
+        }
+        case "html": {
+          out += this.renderer.html(token);
+          continue;
+        }
+        case "paragraph": {
+          out += this.renderer.paragraph(token);
+          continue;
+        }
+        case "text": {
+          let textToken = token;
+          let body = this.renderer.text(textToken);
+          while (i + 1 < tokens.length && tokens[i + 1].type === "text") {
+            textToken = tokens[++i];
+            body += "\n" + this.renderer.text(textToken);
+          }
+          if (top) {
+            out += this.renderer.paragraph({
+              type: "paragraph",
+              raw: body,
+              text: body,
+              tokens: [{ type: "text", raw: body, text: body, escaped: true }]
+            });
+          } else {
+            out += body;
+          }
+          continue;
+        }
+        default: {
+          const errMsg = 'Token with "' + token.type + '" type was not found.';
+          if (this.options.silent) {
+            console.error(errMsg);
+            return "";
+          } else {
+            throw new Error(errMsg);
+          }
+        }
+      }
+    }
+    return out;
+  }
+  /**
+   * Parse Inline Tokens
+   */
+  parseInline(tokens, renderer = this.renderer) {
+    var _a2, _b2;
+    let out = "";
+    for (let i = 0; i < tokens.length; i++) {
+      const anyToken = tokens[i];
+      if ((_b2 = (_a2 = this.options.extensions) == null ? void 0 : _a2.renderers) == null ? void 0 : _b2[anyToken.type]) {
+        const ret = this.options.extensions.renderers[anyToken.type].call({ parser: this }, anyToken);
+        if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(anyToken.type)) {
+          out += ret || "";
+          continue;
+        }
+      }
+      const token = anyToken;
+      switch (token.type) {
+        case "escape": {
+          out += renderer.text(token);
+          break;
+        }
+        case "html": {
+          out += renderer.html(token);
+          break;
+        }
+        case "link": {
+          out += renderer.link(token);
+          break;
+        }
+        case "image": {
+          out += renderer.image(token);
+          break;
+        }
+        case "strong": {
+          out += renderer.strong(token);
+          break;
+        }
+        case "em": {
+          out += renderer.em(token);
+          break;
+        }
+        case "codespan": {
+          out += renderer.codespan(token);
+          break;
+        }
+        case "br": {
+          out += renderer.br(token);
+          break;
+        }
+        case "del": {
+          out += renderer.del(token);
+          break;
+        }
+        case "text": {
+          out += renderer.text(token);
+          break;
+        }
+        default: {
+          const errMsg = 'Token with "' + token.type + '" type was not found.';
+          if (this.options.silent) {
+            console.error(errMsg);
+            return "";
+          } else {
+            throw new Error(errMsg);
+          }
+        }
+      }
+    }
+    return out;
+  }
+}
+class _Hooks {
+  constructor(options) {
+    __publicField(this, "options");
+    __publicField(this, "block");
+    this.options = options || _defaults;
+  }
+  /**
+   * Process markdown before marked
+   */
+  preprocess(markdown) {
+    return markdown;
+  }
+  /**
+   * Process HTML after marked is finished
+   */
+  postprocess(html2) {
+    return html2;
+  }
+  /**
+   * Process all tokens before walk tokens
+   */
+  processAllTokens(tokens) {
+    return tokens;
+  }
+  /**
+   * Provide function to tokenize markdown
+   */
+  provideLexer() {
+    return this.block ? _Lexer.lex : _Lexer.lexInline;
+  }
+  /**
+   * Provide function to parse tokens
+   */
+  provideParser() {
+    return this.block ? _Parser.parse : _Parser.parseInline;
+  }
+}
+__publicField(_Hooks, "passThroughHooks", /* @__PURE__ */ new Set([
+  "preprocess",
+  "postprocess",
+  "processAllTokens"
+]));
+class Marked {
+  constructor(...args) {
+    __publicField(this, "defaults", _getDefaults());
+    __publicField(this, "options", this.setOptions);
+    __publicField(this, "parse", this.parseMarkdown(true));
+    __publicField(this, "parseInline", this.parseMarkdown(false));
+    __publicField(this, "Parser", _Parser);
+    __publicField(this, "Renderer", _Renderer);
+    __publicField(this, "TextRenderer", _TextRenderer);
+    __publicField(this, "Lexer", _Lexer);
+    __publicField(this, "Tokenizer", _Tokenizer);
+    __publicField(this, "Hooks", _Hooks);
+    this.use(...args);
+  }
+  /**
+   * Run callback for every token
+   */
+  walkTokens(tokens, callback) {
+    var _a2, _b2;
+    let values = [];
+    for (const token of tokens) {
+      values = values.concat(callback.call(this, token));
+      switch (token.type) {
+        case "table": {
+          const tableToken = token;
+          for (const cell of tableToken.header) {
+            values = values.concat(this.walkTokens(cell.tokens, callback));
+          }
+          for (const row of tableToken.rows) {
+            for (const cell of row) {
+              values = values.concat(this.walkTokens(cell.tokens, callback));
+            }
+          }
+          break;
+        }
+        case "list": {
+          const listToken = token;
+          values = values.concat(this.walkTokens(listToken.items, callback));
+          break;
+        }
+        default: {
+          const genericToken = token;
+          if ((_b2 = (_a2 = this.defaults.extensions) == null ? void 0 : _a2.childTokens) == null ? void 0 : _b2[genericToken.type]) {
+            this.defaults.extensions.childTokens[genericToken.type].forEach((childTokens) => {
+              const tokens2 = genericToken[childTokens].flat(Infinity);
+              values = values.concat(this.walkTokens(tokens2, callback));
+            });
+          } else if (genericToken.tokens) {
+            values = values.concat(this.walkTokens(genericToken.tokens, callback));
+          }
+        }
+      }
+    }
+    return values;
+  }
+  use(...args) {
+    const extensions = this.defaults.extensions || { renderers: {}, childTokens: {} };
+    args.forEach((pack) => {
+      const opts = { ...pack };
+      opts.async = this.defaults.async || opts.async || false;
+      if (pack.extensions) {
+        pack.extensions.forEach((ext) => {
+          if (!ext.name) {
+            throw new Error("extension name required");
+          }
+          if ("renderer" in ext) {
+            const prevRenderer = extensions.renderers[ext.name];
+            if (prevRenderer) {
+              extensions.renderers[ext.name] = function(...args2) {
+                let ret = ext.renderer.apply(this, args2);
+                if (ret === false) {
+                  ret = prevRenderer.apply(this, args2);
+                }
+                return ret;
+              };
+            } else {
+              extensions.renderers[ext.name] = ext.renderer;
+            }
+          }
+          if ("tokenizer" in ext) {
+            if (!ext.level || ext.level !== "block" && ext.level !== "inline") {
+              throw new Error("extension level must be 'block' or 'inline'");
+            }
+            const extLevel = extensions[ext.level];
+            if (extLevel) {
+              extLevel.unshift(ext.tokenizer);
+            } else {
+              extensions[ext.level] = [ext.tokenizer];
+            }
+            if (ext.start) {
+              if (ext.level === "block") {
+                if (extensions.startBlock) {
+                  extensions.startBlock.push(ext.start);
+                } else {
+                  extensions.startBlock = [ext.start];
+                }
+              } else if (ext.level === "inline") {
+                if (extensions.startInline) {
+                  extensions.startInline.push(ext.start);
+                } else {
+                  extensions.startInline = [ext.start];
+                }
+              }
+            }
+          }
+          if ("childTokens" in ext && ext.childTokens) {
+            extensions.childTokens[ext.name] = ext.childTokens;
+          }
+        });
+        opts.extensions = extensions;
+      }
+      if (pack.renderer) {
+        const renderer = this.defaults.renderer || new _Renderer(this.defaults);
+        for (const prop in pack.renderer) {
+          if (!(prop in renderer)) {
+            throw new Error(`renderer '${prop}' does not exist`);
+          }
+          if (["options", "parser"].includes(prop)) {
+            continue;
+          }
+          const rendererProp = prop;
+          const rendererFunc = pack.renderer[rendererProp];
+          const prevRenderer = renderer[rendererProp];
+          renderer[rendererProp] = (...args2) => {
+            let ret = rendererFunc.apply(renderer, args2);
+            if (ret === false) {
+              ret = prevRenderer.apply(renderer, args2);
+            }
+            return ret || "";
+          };
+        }
+        opts.renderer = renderer;
+      }
+      if (pack.tokenizer) {
+        const tokenizer = this.defaults.tokenizer || new _Tokenizer(this.defaults);
+        for (const prop in pack.tokenizer) {
+          if (!(prop in tokenizer)) {
+            throw new Error(`tokenizer '${prop}' does not exist`);
+          }
+          if (["options", "rules", "lexer"].includes(prop)) {
+            continue;
+          }
+          const tokenizerProp = prop;
+          const tokenizerFunc = pack.tokenizer[tokenizerProp];
+          const prevTokenizer = tokenizer[tokenizerProp];
+          tokenizer[tokenizerProp] = (...args2) => {
+            let ret = tokenizerFunc.apply(tokenizer, args2);
+            if (ret === false) {
+              ret = prevTokenizer.apply(tokenizer, args2);
+            }
+            return ret;
+          };
+        }
+        opts.tokenizer = tokenizer;
+      }
+      if (pack.hooks) {
+        const hooks = this.defaults.hooks || new _Hooks();
+        for (const prop in pack.hooks) {
+          if (!(prop in hooks)) {
+            throw new Error(`hook '${prop}' does not exist`);
+          }
+          if (["options", "block"].includes(prop)) {
+            continue;
+          }
+          const hooksProp = prop;
+          const hooksFunc = pack.hooks[hooksProp];
+          const prevHook = hooks[hooksProp];
+          if (_Hooks.passThroughHooks.has(prop)) {
+            hooks[hooksProp] = (arg) => {
+              if (this.defaults.async) {
+                return Promise.resolve(hooksFunc.call(hooks, arg)).then((ret2) => {
+                  return prevHook.call(hooks, ret2);
+                });
+              }
+              const ret = hooksFunc.call(hooks, arg);
+              return prevHook.call(hooks, ret);
+            };
+          } else {
+            hooks[hooksProp] = (...args2) => {
+              let ret = hooksFunc.apply(hooks, args2);
+              if (ret === false) {
+                ret = prevHook.apply(hooks, args2);
+              }
+              return ret;
+            };
+          }
+        }
+        opts.hooks = hooks;
+      }
+      if (pack.walkTokens) {
+        const walkTokens = this.defaults.walkTokens;
+        const packWalktokens = pack.walkTokens;
+        opts.walkTokens = function(token) {
+          let values = [];
+          values.push(packWalktokens.call(this, token));
+          if (walkTokens) {
+            values = values.concat(walkTokens.call(this, token));
+          }
+          return values;
+        };
+      }
+      this.defaults = { ...this.defaults, ...opts };
+    });
+    return this;
+  }
+  setOptions(opt) {
+    this.defaults = { ...this.defaults, ...opt };
+    return this;
+  }
+  lexer(src, options) {
+    return _Lexer.lex(src, options ?? this.defaults);
+  }
+  parser(tokens, options) {
+    return _Parser.parse(tokens, options ?? this.defaults);
+  }
+  parseMarkdown(blockType) {
+    const parse = (src, options) => {
+      const origOpt = { ...options };
+      const opt = { ...this.defaults, ...origOpt };
+      const throwError = this.onError(!!opt.silent, !!opt.async);
+      if (this.defaults.async === true && origOpt.async === false) {
+        return throwError(new Error("marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise."));
+      }
+      if (typeof src === "undefined" || src === null) {
+        return throwError(new Error("marked(): input parameter is undefined or null"));
+      }
+      if (typeof src !== "string") {
+        return throwError(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(src) + ", string expected"));
+      }
+      if (opt.hooks) {
+        opt.hooks.options = opt;
+        opt.hooks.block = blockType;
+      }
+      const lexer = opt.hooks ? opt.hooks.provideLexer() : blockType ? _Lexer.lex : _Lexer.lexInline;
+      const parser = opt.hooks ? opt.hooks.provideParser() : blockType ? _Parser.parse : _Parser.parseInline;
+      if (opt.async) {
+        return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer(src2, opt)).then((tokens) => opt.hooks ? opt.hooks.processAllTokens(tokens) : tokens).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser(tokens, opt)).then((html2) => opt.hooks ? opt.hooks.postprocess(html2) : html2).catch(throwError);
+      }
+      try {
+        if (opt.hooks) {
+          src = opt.hooks.preprocess(src);
+        }
+        let tokens = lexer(src, opt);
+        if (opt.hooks) {
+          tokens = opt.hooks.processAllTokens(tokens);
+        }
+        if (opt.walkTokens) {
+          this.walkTokens(tokens, opt.walkTokens);
+        }
+        let html2 = parser(tokens, opt);
+        if (opt.hooks) {
+          html2 = opt.hooks.postprocess(html2);
+        }
+        return html2;
+      } catch (e2) {
+        return throwError(e2);
+      }
+    };
+    return parse;
+  }
+  onError(silent, async) {
+    return (e2) => {
+      e2.message += "\nPlease report this to https://github.com/markedjs/marked.";
+      if (silent) {
+        const msg = "<p>An error occurred:</p><pre>" + escape(e2.message + "", true) + "</pre>";
+        if (async) {
+          return Promise.resolve(msg);
+        }
+        return msg;
+      }
+      if (async) {
+        return Promise.reject(e2);
+      }
+      throw e2;
+    };
+  }
+}
+const markedInstance = new Marked();
+function marked(src, opt) {
+  return markedInstance.parse(src, opt);
+}
+marked.options = marked.setOptions = function(options) {
+  markedInstance.setOptions(options);
+  marked.defaults = markedInstance.defaults;
+  changeDefaults(marked.defaults);
+  return marked;
+};
+marked.getDefaults = _getDefaults;
+marked.defaults = _defaults;
+marked.use = function(...args) {
+  markedInstance.use(...args);
+  marked.defaults = markedInstance.defaults;
+  changeDefaults(marked.defaults);
+  return marked;
+};
+marked.walkTokens = function(tokens, callback) {
+  return markedInstance.walkTokens(tokens, callback);
+};
+marked.parseInline = markedInstance.parseInline;
+marked.Parser = _Parser;
+marked.parser = _Parser.parse;
+marked.Renderer = _Renderer;
+marked.TextRenderer = _TextRenderer;
+marked.Lexer = _Lexer;
+marked.lexer = _Lexer.lex;
+marked.Tokenizer = _Tokenizer;
+marked.Hooks = _Hooks;
+marked.parse = marked;
+marked.options;
+marked.setOptions;
+marked.use;
+marked.walkTokens;
+marked.parseInline;
+_Parser.parse;
+_Lexer.lex;
+function PaperCard({
+  title,
+  authors,
+  conference,
+  volume,
+  number,
+  pages,
+  year,
+  publisher,
+  label,
+  visual,
+  project_page,
+  video,
+  code,
+  arxiv,
+  paper,
+  notes,
+  extra
+}) {
+  const [isHovered, setIsHovered] = reactExports.useState(false);
+  const [isInView, setIsInView] = reactExports.useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = reactExports.useState(false);
+  const cardRef = reactExports.useRef(null);
+  const videoRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const cardRect = entry.boundingClientRect;
+          const windowHeight = window.innerHeight;
+          const cardCenter = cardRect.top + cardRect.height / 2;
+          const windowCenter = windowHeight / 2;
+          const isNearCenter = Math.abs(cardCenter - windowCenter) < windowHeight / 4;
+          setIsInView(isNearCenter);
+        } else {
+          setIsInView(false);
+        }
+      },
+      {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: "-25% 0px -25% 0px"
+      }
+    );
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+  const image = "images/" + label + "_before.jpg";
+  var video_hover = null;
+  var image_hover = null;
+  if (visual == "overlay_video") {
+    video_hover = "images/" + label + "_after.mp4";
+  } else if (visual == "overlay_image") {
+    image_hover = "images/" + label + "_after.jpg";
+  }
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+  reactExports.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.addEventListener("loadeddata", handleVideoLoad);
+    }
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("loadeddata", handleVideoLoad);
+      }
+    };
+  }, []);
+  const renderAuthor = (author, index2) => {
+    const website = getAuthorWebsite(author);
+    const content = author === "Ricardo Martin-Brualla" ? /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: author }) : author;
+    if (website) {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "a",
+        {
+          href: website,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "underline text-gray-600",
+          children: content
+        },
+        author
+      );
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gray-600", children: content }, author);
+  };
+  const renderAuthors = () => {
+    return authors.map((author, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      renderAuthor(author),
+      index2 < authors.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: ", " })
+    ] }));
+  };
+  const renderNotes = () => {
+    if (!notes) return null;
+    const htmlContent = marked(notes);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "mt-1 text-sm text-muted-foreground prose prose-sm prose-a:text-blue-600 prose-a:hover:underline",
+        dangerouslySetInnerHTML: { __html: htmlContent }
+      }
+    );
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    Card,
+    {
+      ref: cardRef,
+      className: "overflow-hidden transition-all duration-300 hover:shadow-lg flex",
+      onMouseEnter: () => setIsHovered(true),
+      onMouseLeave: () => setIsHovered(false),
+      children: [
+        visual !== "none" && (image || video_hover) && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-sm:w-32 sm:w-48 flex-shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AspectRatio, { ratio: 1 / 1, className: "relative", children: [
+          image && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: image,
+              alt: `Reference image for ${title}`,
+              className: `h-auto w-full object-contain transition-opacity duration-300 ${(isHovered || isInView) && (video_hover || image_hover) && (isVideoLoaded || image_hover) ? "opacity-0" : "opacity-100"}`
+            }
+          ),
+          video_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "video",
+            {
+              ref: videoRef,
+              src: video_hover,
+              autoPlay: true,
+              muted: true,
+              loop: true,
+              className: `absolute inset-0 h-auto w-full object-contain transition-opacity duration-300 ${(isHovered || isInView) && isVideoLoaded ? "opacity-100" : "opacity-0"}`
+            }
+          ),
+          image_hover && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: image_hover,
+              alt: `Reference image for ${title}`,
+              className: `absolute inset-0 h-auto w-full object-contain transition-opacity duration-300 ${isHovered || isInView ? "opacity-100" : "opacity-0"}`
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "p-4 text-left", children: [
+          project_page ? /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: project_page, target: "_blank", rel: "noopener noreferrer", className: "hover:underline", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-serif font-semibold leading-tight", children: title }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-serif font-semibold leading-tight", children: title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm", children: renderAuthors() }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 text-sm font-medium text-gray-500", children: [
+            conference,
+            ", ",
+            year
+          ] }),
+          renderNotes(),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-2 mt-2", children: [
+            project_page && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: project_page, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent bg-gray-100", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "mr-1 h-3 w-3" }),
+              "Project"
+            ] }) }),
+            arxiv && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: arxiv, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent bg-gray-100", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "mr-1 h-3 w-3" }),
+              "arXiv"
+            ] }) }),
+            code && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: code, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent bg-gray-100", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FileCode, { className: "mr-1 h-3 w-3" }),
+              "Code"
+            ] }) }),
+            video && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: video, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent bg-gray-100", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { className: "mr-1 h-3 w-3" }),
+              "Video"
+            ] }) }),
+            paper && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: paper, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent bg-gray-100", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "mr-1 h-3 w-3" }),
+              "Paper"
+            ] }) })
+          ] })
+        ] }) })
+      ]
+    }
+  );
+}
+const csvData = 'authors,title,publication,volume,number,pages,year,publisher,label,visual,project_page,video,code,arxiv,paper,notes,Extra\n"Gao, Ruiqi; Holynski, Aleksander; Henzler, Philipp; Brussee, Arthur; Martin-Brualla, Ricardo; Srinivasan, Pratul P; Barron, Jonathan T; Poole, Ben;",CAT3D: Create Anything in 3D with Multi-View Diffusion Models,NeurIPS,,,,2024,,cat3d,overlay_video,https://cat3d.github.io/,,,https://arxiv.org/abs/2405.10314,,,\n"Zhao, Xiaoming; Srinivasan, Pratul P; Verbin, Dor; Park, Keunhong; Martin-Brualla, Ricardo; Henzler, Philipp;",IllumiNeRF: 3D Relighting without Inverse Rendering,NeurIPS,,,,2024,,illum,overlay_video,https://illuminerf.github.io/,,https://github.com/illuminerf/illuminerf_results,https://arxiv.org/abs/2406.06527,,,\n"Karpur, Arjun; Perrotta, Guilherme; Martin-Brualla, Ricardo; Zhou, Howard; Araujo, André;",LFM-3D: Learnable Feature Matching Across Wide Baselines Using 3D Signals,3DV,,,,2024,,lfm3d,static_image,https://research.google/pubs/lfm-3d-learnable-feature-matching-across-wide-baselines-using-3d-signals/,,,https://arxiv.org/abs/2303.12779,,,\n"Jampani, Varun; Maninis, Kevis-Kokitsi; Engelhardt, Andreas; Karpur, Arjun; Truong, Karen; Sargent, Kyle; Popov, Stefan; Araujo, André; Martin-Brualla, Ricardo; Patel, Kaushal; Vlasic, Daniel; Ferrari, Vittorio; Makadia, Ameesh; Liu, Ce; Li, Yuanzhen; Zhou, Howard",NAVI: Category-Agnostic Image Collections with High-Quality 3D Shape and Pose Annotations,NeurIPS,,,,2023,,navi,static_image,https://navidataset.github.io/,,https://github.com/google/navi,https://arxiv.org/abs/2306.09109,,,\n"Park, Keunhong; Henzler, Philipp; Mildenhall, Ben; Barron, Jonathan T; Martin-Brualla, Ricardo",CamP: Camera Preconditioning for Neural Radiance Fields,Siggraph Asia,,,,2023,,camp,overlay_video,https://camp-nerf.github.io/,,,https://arxiv.org/abs/2308.10902,,,\n"Uy, Mikaela Angelina; Martin-Brualla, Ricardo; Guibas, Leonidas; Li, Ke",SCADE: NeRFs from Space Carving with Ambiguity-Aware Depth Estimates,CVPR,,,,2023,,scade,static_image,https://scade-spacecarving-nerfs.github.io/,https://www.youtube.com/watch?v=5XwWZn-kjBU,https://github.com/mikacuy/scade,https://arxiv.org/abs/2303.13582,,,\n"Watson, Daniel; Chan, William; Martin-Brualla, Ricardo; Ho, Jonathan; Tagliasacchi, Andrea; Norouzi, Mohammad",Novel view synthesis with diffusion models,ICLR,,,,2023,,diffusion3d,overlay_video,https://3d-diffusion.github.io/,,,https://arxiv.org/abs/2210.04628,,,\n"Mildenhall, Ben; Hedman, Peter; Martin-Brualla, Ricardo; Srinivasan, Pratul P; Barron, Jonathan T",NeRF in the Dark: High Dynamic Range View Synthesis from Noisy Raw Images,CVPR,,,,2022,,rawnerf,overlay_video,https://bmild.github.io/rawnerf/,https://www.youtube.com/watch?v=JtBS4KBcKVc,,https://arxiv.org/abs/2111.13679,,,\n"Lawrence, Jason; Goldman, Dan B; Achar, Supreeth;  Blascovich, Gregory M; Desloge, Joseph G; Fortes, Tommy; Gomez, Eric M; Haberling, Sascha; Hoppe,  Hugues; Huibers, Andy; Knaus, Claude;  Kuschak,  Brian;  Martin-Brualla, Ricardo; Nover,  Harris; Russell,  Andrew Ian; Seitz, Steven M; Tong, Kevin",Project Starline: A high-fidelity telepresence system,SIGGRAPH Asia,,,,2021,,starline,static_image,https://starline.google/,https://www.youtube.com/watch?v=kDgToq5aXh0,,,https://research.google/pubs/project-starline-a-high-fidelity-telepresence-system/,,\n"Tewari, Ayush;  Thies, Justus; Mildenhall, Ben; Srinivasan, Pratul P; Tretschk, Edgar; Wang, Yifan; Lassner, Christoph; Sitzmann, Vincent; Martin-Brualla, Ricardo; Lombardi, Stephen; Simon, Tomas; Theobalt, Christian; Niessner, Matthias; Barron, Jonathan T.; Wetzstein, Gordon; Zollhöfer, Michael;  Golyanik, Vladislav",Advances in Neural Rendering,Eurographics STAR report,,,,2022,,star_nerf,static_image,,,,https://arxiv.org/abs/2111.05849,,,\n"Luo, Xuan; Zhang, Xuaner; Yoo, Paul; Martin-Brualla, Ricardo; Lawrence, Jason; Seitz, Steven M;",Time-travel rephotography,SIGGRAPH Asia,,,,2021,,time_travel_rephoto,overlay_image,https://time-travel-rephotography.github.io,,https://github.com/Time-Travel-Rephotography/Time-Travel-Rephotography.github.io,https://arxiv.org/abs/2012.12261,,Featured in [Two Minute Papers](https://www.youtube.com/watch?v=2wcw_O_19XQ),\n"Park, Keunhong; Sinha, Utkarsh; Hedman, Peter; Barron, Jonathan T; Bouaziz, Sofien; Goldman, Dan B; Martin-Brualla, Ricardo; Seitz, Steven M;",HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields,SIGGRAPH Asia,,,,2021,,hypernerf,overlay_video,https://hypernerf.github.io,,https://github.com/google/hypernerf,https://arxiv.org/abs/2106.13228,,,Applying ideas from level set methods to NeRF lets you represent scenes that deform and change shape.\n"Barron, Jonathan T; Mildenhall, Ben; Tancik, Matthew; Hedman, Peter; Martin-Brualla, Ricardo; Srinivasan, Pratul P;",Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields,ICCV,,,,2021,,mipnerf,overlay_video,https://jonbarron.info/mipnerf/,https://youtu.be/EpH175PY1A0,https://github.com/google/mipnerf,https://arxiv.org/abs/2103.13415,,***Best Paper Honorable Mention*** (top 5 papers),\n"Park, Keunhong; Sinha, Utkarsh; Barron, Jonathan T; Bouaziz, Sofien; Goldman, Dan B; Seitz, Steven M; Martin-Brualla, Ricardo;",Nerfies: Deformable neural radiance fields,ICCV,,,5865-5874,2021,,nerfies,overlay_video,https://nerfies.github.io/,https://www.youtube.com/watch?v=MrKrnHhk8IA,,https://arxiv.org/abs/2011.12948,,"***Press:*** [Gizmodo](https://gizmodo.com/nerfies-might-be-the-future-of-selfies-letting-your-fr-1845764332).\nFeatured in [Two Minute Papers](https://www.youtube.com/watch?v=IDMiMKWucaI). ",\n"Azinović, Dejan; Martin-Brualla, Ricardo; Goldman, Dan B; Nießner, Matthias; Thies, Justus;",Neural RGB-D Surface Reconstruction,CVPR,,,,2022,,neural_rgbd,static_image,https://dazinovic.github.io/neural-rgbd-surface-reconstruction/,https://www.youtube.com/watch?time_continue=1&v=iWuSowPsC3g&feature=emb_logo,,https://arxiv.org/abs/2104.04532,,,\n"Martin-Brualla, Ricardo; Radwan, Noha; Sajjadi, Mehdi SM; Barron, Jonathan T; Dosovitskiy, Alexey; Duckworth, Daniel;",Nerf in the wild: Neural radiance fields for unconstrained photo collections,CVPR,,,7210-7219,2021,,nerfw,overlay_video,https://nerf-w.github.io/,https://www.youtube.com/watch?v=mRAKVQj5LRA,,https://arxiv.org/abs/2008.02268,,"***Press:*** [PetaPixel](https://petapixel.com/2020/08/11/this-ai-creates-detailed-3d-renderings-from-thousands-of-tourist-photos/)\nFeatured in [Two Minute Papers](https://www.youtube.com/watch?v=T29O-MhYALw)",\n"Wang, Qianqian; Wang, Zhicheng; Genova, Kyle; Srinivasan, Pratul P; Zhou, Howard; Barron, Jonathan T; Martin-Brualla, Ricardo; Snavely, Noah; Funkhouser, Thomas;",IBRNet: Learning multi-view image-based rendering,CVPR,,,4690-4699,2021,,ibrnet,overlay_video,https://ibrnet.github.io/,,https://github.com/googleinterns/IBRNet,https://arxiv.org/abs/2102.13090,,,\n"Zhang, Edward; Martin-Brualla, Ricardo; Kontkanen, Janne; Curless, Brian L;",No Shadow Left Behind: Removing Objects and their Shadows using Approximate Lighting and Geometry,CVPR,,,16397-16406,2021,,no_shadow,overlay_image,http://grail.cs.washington.edu/projects/shadowremoval/,,,,https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_No_Shadow_Left_Behind_Removing_Objects_and_Their_Shadows_Using_CVPR_2021_paper.pdf,,\n"Rematas, Konstantinos; Martin-Brualla, Ricardo; Ferrari, Vittorio;",Sharf: Shape-conditioned radiance fields from a single view,ICML,,,,2021,,sharf,static_image,http://www.krematas.com/sharf/,,https://github.com/tensorflow/graphics/tree/master/tensorflow_graphics/projects/radiance_fields/sharf,https://arxiv.org/abs/2102.08860,,,\n"Xie, Christopher; Park, Keunhong; Martin-Brualla, Ricardo; Brown, Matthew;",FiG-NeRF: Figure-Ground Neural Radiance Fields for 3D Object Category Modelling,3DV,,,,2021,,fignerf,overlay_video,https://fig-nerf.github.io//,https://www.youtube.com/watch?v=WtZxuv_hkic,,https://arxiv.org/abs/2104.08418,,,\n"Tewari, Ayush; Fried, Ohad; Thies, Justus; Sitzmann, Vincent; Lombardi, Stephen; Sunkavalli, Kalyan; Martin-Brualla, Ricardo; Simon, Tomas; Saragih, Jason; Nießner, Matthias; Pandey, Rohit; Fanello, Sean; Wetzstein, Gordon; Zhu, Jun-Yan; Theobalt, Christian; Agrawala, Maneesh; Shechtman, Eli; Goldman, Dan B; Zollhöfer, Michael;",State of the art on neural rendering,Eurographics STAR report,39,2,701-727,2020,,star_neural_rendering,static_image,,,,https://arxiv.org/abs/2004.03805,,,\n"Luo, Xuan; Kong, Yanmeng; Lawrence, Jason; Martin-Brualla, Ricardo; Seitz, Steven M;",KeystoneDepth: History in 3D,3DV,,,463-472,2020,IEEE,keystone,static_image,https://keystonedepth.cs.washington.edu/,https://www.youtube.com/watch?v=nm2WYARNH1Q,,,https://drive.google.com/file/d/1IZUzIgVXypRIUdP5GsWXlQH85H4kSFJh/view?usp=sharing,,\n"Martin-Brualla, Ricardo; Pandey, Rohit; Bouaziz, Sofien; Brown, Matthew; Goldman, Dan B;",Gelato: Generative latent textured objects,ECCV,,,242-258,2020,"Springer, Cham",gelato,static_image,https://gelato-paper.github.io/,,,https://arxiv.org/abs/2008.04852,,,\n"Trinidad, Marc Comino; Brualla, Ricardo Martin; Kainz, Florian; Kontkanen, Janne;",Multi-view image fusion,ICCV,,,4101-4110,2019,,multiview_fusion,overlay_image,https://augmentedperception.github.io/pixelfusion/,,,,https://openaccess.thecvf.com/content_ICCV_2019/papers/Trinidad_Multi-View_Image_Fusion_ICCV_2019_paper.pdf,,\n"Meshry, Moustafa; Goldman, Dan B; Khamis, Sameh; Hoppe, Hugues; Pandey, Rohit; Snavely, Noah; Martin-Brualla, Ricardo;",Neural rerendering in the wild,CVPR,,,6878-6887,2019,,neural_rerendering,static_image,,https://www.youtube.com/watch?v=E1crWQn_kmY,https://github.com/google/neural_rerendering_in_the_wild,https://arxiv.org/abs/1904.04290,,***Best Paper Award Finalist*** (top 1% of submissions),\n"Pandey, Rohit; Tkach, Anastasia; Yang, Shuoran; Pidlypenskyi, Pavel; Taylor, Jonathan; Martin-Brualla, Ricardo; Tagliasacchi, Andrea; Papandreou, George; Davidson, Philip; Keskin, Cem; Izadi, Shahram; Fanello, Sean;",Volumetric capture of humans with a single rgbd camera via semi-parametric learning,CVPR,,,9709-9718,2019,,volume_cap,static_image,,https://www.youtube.com/watch?v=cbKE4av2NU4,,https://arxiv.org/abs/1905.12162,,,\n"Martin-Brualla, Ricardo; Pandey, Rohit; Yang, Shuoran; Pidlypenskyi, Pavel; Taylor, Jonathan; Valentin, Julien; Khamis, Sameh; Davidson, Philip; Tkach, Anastasia; Lincoln, Peter; Kowdle, Adarsh; Rhemann, Christoph; Goldman, Dan B; Keskin, Cem; Seitz, Steven M; Izadi, Shahram; Fanello, Sean;\n",Lookingood: Enhancing performance capture with real-time neural re-rendering,SIGGRAPH Asia,,,,2018,,lookingood,overlay_image,,https://www.youtube.com/watch?v=Md3tdAKoLGU,,https://arxiv.org/abs/1811.05029,,,\n"Martin-Brualla, Ricardo; Gallup, David; Seitz, Steven M;",3D time-lapse reconstruction from internet photos,ICCV,,,1332-1340,2015,,timelapse_3d,overlay_video,https://grail.cs.washington.edu/projects/timelapse3d/,https://www.youtube.com/watch?v=oQpq4TM96Ow,,,https://grail.cs.washington.edu/projects/timelapse3d/3DTimelapseReconstructionICCV15.pdf,"***Press:*** [PetaPixel](http://petapixel.com/2015/12/12/scientists-create-3d-time-lapse-videos-from-internet-photos-of-landmarks/)\n",\n"Martin-Brualla, Ricardo; Gallup, David; Seitz, Steven M;",Time-lapse mining from internet photos,SIGGRAPH,34,4,1-8,2015,"ACM New York, NY, USA",timelapse_mining,overlay_video,http://grail.cs.washington.edu/projects/timelapse,https://www.youtube.com/watch?v=wptzVm0tngc,,,http://grail.cs.washington.edu/projects/timelapse/TimelapseMiningSIGGRAPH15.pdf,"***Press:*** [WIRED](https://www.wired.com/2015/05/crowdsourced-timelapse/), [BBC](http://www.bbc.com/news/technology-32803455), [Seattle Times](http://www.seattletimes.com/business/technology/uw-students-show-off-computer-science-expertise/) & more.",\n"Martin-Brualla, Ricardo; He, Yanling; Russell, Bryan C; Seitz, Steven M;",The 3d jigsaw puzzle: Mapping large indoor spaces,ECCV,,,1-16,2014,"Springer, Cham",jigsaw,static_image,http://grail.cs.washington.edu/projects/jigsaw3d,https://www.youtube.com/watch?v=CRRhyhaI7zY,,,http://grail.cs.washington.edu/projects/jigsaw3d/ECCV2014_3d_jigsaw_puzzle.pdf,,\n"Russell, Bryan C; Martin-Brualla, Ricardo; Butler, Daniel J; Seitz, Steven M; Zettlemoyer, Luke;",3D Wikipedia: Using online text to automatically label and navigate reconstructed geometry,SIGGRAPH Asia,32,6,1-10,2013,"ACM New York, NY, USA",wiki_3d,overlay_video,http://grail.cs.washington.edu/projects/label3d,https://www.youtube.com/watch?v=CNWFZzmZ0as,,,http://grail.cs.washington.edu/projects/label3d/3D_Wikipedia_SIGGRAPH_Asia_2013.pdf,"***Press:*** [New Scientist](http://www.newscientist.com/article/dn24318-take-virtual-3d-tours-of-tourist-sites-with-wikipedia.html), [Gizmodo](https://gizmodo.com/this-crazy-program-turns-wikipedia-into-3d-models-of-th-1440287279)\n",\n"Zhang, Cha; Cai, Qin; Chou, Philip A; Zhang, Zhengyou; Martin-Brualla, Ricardo;","Viewport: A distributed, immersive teleconferencing system with infrared dot pattern",IEEE MultiMedia,20,1,17-27,2013,IEEE,viewport,static_image,,,,,http://ricardomartinbrualla.com/assets/ieee_multimedia_2013.pdf,,\n"Pasca, Marius; Alfonseca, Enrique; Robledo-Arnuncio, Enrique; Martin-Brualla, Ricardo; Hall, Keith;",The role of query sessions in extracting instance attributes from web search queries,European Conference on Information Retrieval,,,62-74,2010,"Springer, Berlin, Heidelberg",,none,,,,,http://ricardomartinbrualla.com/assets/coling_2010.pdf,,\n"Martin-Brualla, Ricardo; Alfonseca, Enrique; Pasca, Marius; Hall, Keith; Robledo-Arnuncio, Enrique; Ciaramita, Massimiliano;",Instance sense induction from attribute sets,Coling,,,819-827,2010,,,none,,,,,http://ricardomartinbrualla.com/assets/ecir_2010.pdf,,\n';
 const loadPapers = () => {
   const parsedData = Papa.parse(csvData, {
     header: true,
@@ -17725,41 +19975,26 @@ const AvatarFallback = reactExports.forwardRef(({ className, ...props }, ref) =>
   }
 ));
 AvatarFallback.displayName = Fallback.displayName;
-const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
-  {
-    variants: {
-      variant: {
-        default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-        outline: "text-foreground"
-      }
-    },
-    defaultVariants: {
-      variant: "default"
-    }
-  }
-);
-function Badge({ className, variant, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: cn(badgeVariants({ variant }), className), ...props });
-}
 const Index = () => {
   const papers = loadPapers();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "container max-w-3xl mx-auto py-12 px-4 sm:px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "mb-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-primary", children: "Ricardo Martin-Brualla" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "w-32 h-32 border-2 border-muted self-end sm:self-auto max-sm:hidden", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "w-32 h-32 self-end sm:self-auto max-sm:hidden", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-lg max-w-none", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sm:flow-root", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Avatar, { className: "hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 border-2 border-muted", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { src: "images/RicardoMartinBrualla.jpg", alt: "Profile photo" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarFallback, { children: "RMB" })
-        ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-lg max-w-none overflow-visible", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sm:flow-root relative overflow-visible", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden max-sm:block float-right ml-4 mb-4 w-32 h-32 -mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "img",
+          {
+            src: "images/RicardoMartinBrualla.jpg",
+            alt: "Profile photo",
+            className: "w-full h-full object-cover"
+          }
+        ) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base sm:text-lg text-secondary mb-4", children: "I am a researcher interested in the intersection of AI and 3D, and excited about creating new products in this area." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-base sm:text-lg text-secondary mb-4", children: [
           "Previously, I worked at Google for eight years, most recently as a Senior Staff Research Scientist, leading and managing a team working on ",
@@ -17789,21 +20024,21 @@ const Index = () => {
           "."
         ] })
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-md", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:rmbrualla@gmail.com", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "mr-1 h-3 w-3" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-md flex justify-center w-full mt-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-2 justify-center items-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:rmbrualla@gmail.com", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent text-sm px-3 py-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "mr-2 h-4 w-4" }),
           "Email"
         ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(GraduationCap, { className: "mr-1 h-3 w-3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://scholar.google.com/citations?hl=en&user=9F59OCYAAAAJ", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent text-sm px-3 py-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GraduationCap, { className: "mr-2 h-4 w-4" }),
           "Google Scholar"
         ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://twitter.com/rmbrualla", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Twitter, { className: "mr-1 h-3 w-3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://twitter.com/rmbrualla", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent text-sm px-3 py-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Twitter, { className: "mr-2 h-4 w-4" }),
           "Twitter"
         ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/rmbrualla/", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "mr-1 h-3 w-3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/rmbrualla/", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "hover:bg-accent text-sm px-3 py-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "mr-2 h-4 w-4" }),
           "Github"
         ] }) })
       ] }) })
