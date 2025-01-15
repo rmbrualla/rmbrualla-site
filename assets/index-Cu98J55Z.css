@@ -1784,8 +1784,8 @@ h1, h2, h3, h4, h5, h6{
   margin-top: -1rem;
 }
 
-.-mt-8{
-  margin-top: -2rem;
+.mb-0{
+  margin-bottom: 0px;
 }
 
 .mb-1{
@@ -1826,6 +1826,10 @@ h1, h2, h3, h4, h5, h6{
 
 .mr-2{
   margin-right: 0.5rem;
+}
+
+.mt-0{
+  margin-top: 0px;
 }
 
 .mt-1{
